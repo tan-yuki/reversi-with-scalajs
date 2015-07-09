@@ -7,15 +7,11 @@ import scala.scalajs.js
 
 case class CellView(cell: Cell) extends View {
 
-  override protected[this] def render(): JQuery = {
-    jQuery(s"""<td class="cell"></td>""")
-  }
-
-  override def renderWithEvents(): JQuery = {
-    val elem:JQuery = render()
+  override def render(): JQuery = {
+    val elem = jQuery(s"""<td class="cell"></td>""")
 
     elem.click { () =>
-      elem.append(ReversiView(Reversi(Color.Black)).renderWithEvents())
+      elem.append(ReversiView(Reversi(Color.Black)).render())
     }
 
     elem

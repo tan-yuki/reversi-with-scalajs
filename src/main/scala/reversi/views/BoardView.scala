@@ -5,13 +5,11 @@ import reversi.models.{Board, Cell}
 
 case class BoardView(board: Board) extends View {
 
-  override def renderWithEvents(): JQuery = render()
-
-  override protected[this] def render(): JQuery = {
+  override def render(): JQuery = {
 
     val cellRecords:Seq[JQuery] = (1 to board.edge).map( y => {
       val cells:Seq[JQuery] = (1 to board.edge).map( x => {
-        CellView(Cell(x, y, None)).renderWithEvents()
+        CellView(Cell(x, y, None)).render()
       }).toSeq
 
       jQuery("<tr/>").append(cells: _*)
