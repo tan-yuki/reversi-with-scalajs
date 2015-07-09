@@ -1,0 +1,48 @@
+.board { /* table */
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.board td {
+    padding: 0;
+}
+
+.cell {
+    width: 38px;
+    height: 38px;
+    border: 1px solid black;
+    background-color: green;
+    position: relative;
+}
+
+.cell .reversi {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.cell .reversi.black {
+    background-color: black;
+}
+
+.cell .reversi.white {
+    background-color: white;
+}
+
+.cell .candidate {
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #ccc;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+    opacity: 0.6;
+}

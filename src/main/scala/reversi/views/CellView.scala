@@ -1,10 +1,25 @@
 package reversi.views
 
-import reversi.models.Cell
+import org.scalajs.jquery._
+import reversi.models.{Color, Reversi, Cell}
 
-case class CellView(cell: Cell) extends ViewInterface[String] {
+import scala.scalajs.js
 
-  override def render(): String = {
-    s"""<td class="cell"></td>"""
+case class CellView(cell: Cell) extends View {
+
+  override protected[this] def render(): JQuery = {
+    jQuery(s"""<td class="cell"></td>""")
+  }
+
+  override def renderWithEvents(): JQuery = {
+    val elem:JQuery = render()
+
+    elem.click { () =>
+      elem.append(ReversiView(Reversi(Color.Black)).renderWithEvents())
+    }
+
+    elem
   }
 }
+
+
