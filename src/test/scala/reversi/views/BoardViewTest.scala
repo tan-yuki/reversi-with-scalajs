@@ -1,12 +1,13 @@
 package reversi.views
 
 import reversi.models.{Color, Board}
+
 import utest._
 
 object BoardViewTest extends TestSuite {
 
   val edge = 8
-  val elem = BoardView(Board(edge)).render()
+  val elem = BoardView(Board.initialize(edge)).render()
 
   def tests = TestSuite {
     'Boardが正方形である {
