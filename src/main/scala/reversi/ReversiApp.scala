@@ -11,6 +11,6 @@ import org.scalajs.jquery.jQuery
 object ReversiApp extends js.JSApp {
 
   def main(): Unit = {
-    jQuery("#main").append(BoardView(Board(9)).render())
+    jQuery("#main").append(BoardView(Board(8)).render())
   }
 }
