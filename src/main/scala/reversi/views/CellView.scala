@@ -1,9 +1,10 @@
 package reversi.views
 
 import org.scalajs.jquery._
-import reversi.models.{Color, Reversi, Cell}
+import reversi.ReversiApp
+import reversi.models._
 
-case class CellView(cell: Cell) extends View {
+case class CellView(cell: Cell, cellCollection: CellCollection) extends View {
 
   override protected[this] val elem: JQuery =
     jQuery(s"""<td class="cell"></td>""")
@@ -16,7 +17,11 @@ case class CellView(cell: Cell) extends View {
       case None =>
           elem.click { e: JQueryEventObject =>
             e.stopPropagation()
-            elem.append(ReversiView(Reversi(Color.Black)).render())
+
+            val reversi = Reversi(Color.Black)
+            val newCellCollection = cellCollection.addReversi(cell.point, reversi)
+
+            ReversiApp.refresh(newCellCollection)
           }
     }
 

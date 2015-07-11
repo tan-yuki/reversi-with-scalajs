@@ -1,9 +1,7 @@
 package reversi.views
 
 import org.scalajs.jquery._
-import reversi.models.{Reversi, Color, Board, Cell}
-
-import scala.collection.immutable.IndexedSeq
+import reversi.models.Board
 
 case class BoardView(board: Board) extends View {
 
@@ -18,16 +16,18 @@ case class BoardView(board: Board) extends View {
       val recordElem = jQuery("<tr />")
 
       // Get cells fixed by "y"-axis
-      val cellRecord = board.cellCollection.filter(_.y == y)
+      val cellRecord = board.cellCollection.filter(_.point.y == y)
 
       // Append cell dom to <tr> elem
-      recordElem.append(cellRecord.map(c => CellView(c).render()): _*)
+      recordElem.append(cellRecord.map(c => CellView(c, board.cellCollection).render()): _*)
 
       recordElem
     }.toSeq
+
 
     elem.append(recordsElem: _*)
 
     elem
   }
 }
+

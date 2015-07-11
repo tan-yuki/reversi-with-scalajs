@@ -7,7 +7,7 @@ object CellTest extends TestSuite {
 
   def tests = TestSuite {
     'ReversiをもっているCellの判定 {
-      val cell = Cell(1, 1, Some(Reversi(Color.White)))
+      val cell = Cell(Point(1, 1), Some(Reversi(Color.White)))
 
       assert(cell.hasReversi)
       assert(!cell.hasReversiColoredBy(Color.Black))
@@ -15,7 +15,7 @@ object CellTest extends TestSuite {
     }
 
     'ReversiをもっていないCellの判定 {
-      val cell = Cell(1, 1, None)
+      val cell = Cell(Point(1, 1), None)
 
       assert(!cell.hasReversi)
       assert(!cell.hasReversiColoredBy(Color.Black))
