@@ -18,12 +18,35 @@ object CellCollectionTest extends TestSuite {
 
     '初期状態のCellCollectionのx3y4の位置に白Reversiを置くとx4y4のReversiが白になる {
       val initialCellCollection = Board.initialize(8).cellCollection
-      val newCellCollection = initialCellCollection.addReversi(Point(3, 4), Reversi(Color.White))
+      val newCellCollection = initialCellCollection.addReversiAndCalculate(
+        Point(3, 4), Reversi(Color.White))
 
       assert(newCellCollection.count(_.hasReversi) == 5)
       assert(newCellCollection.count(_.hasReversiColoredBy(Color.Black)) == 1)
       assert(newCellCollection.count(_.hasReversiColoredBy(Color.White)) == 4)
-      assert(newCellCollection.get(4, 4).hasReversiColoredBy(Color.White))
+      assert(newCellCollection.get(Point(4, 4)).hasReversiColoredBy(Color.White))
+    }
+
+    '初期状態のCellCollectionの場合黒のCandidatesは4つ {
+      val initialCellCollection = Board.initialize(8).cellCollection
+      val candidates = initialCellCollection.candidates(Color.Black)
+
+      assert(candidates.length == 4)
+      assert(candidates.contains(Point(3, 5)))
+      assert(candidates.contains(Point(4, 6)))
+      assert(candidates.contains(Point(5, 3)))
+      assert(candidates.contains(Point(6, 4)))
+    }
+
+    '初期状態のCellCollectionの場合白のCandidatesは4つ {
+      val initialCellCollection = Board.initialize(8).cellCollection
+      val candidates = initialCellCollection.candidates(Color.White)
+
+      assert(candidates.length == 4)
+      assert(candidates.contains(Point(3, 4)))
+      assert(candidates.contains(Point(4, 3)))
+      assert(candidates.contains(Point(5, 6)))
+      assert(candidates.contains(Point(6, 5)))
     }
   }
 }

@@ -31,6 +31,10 @@ object ReversiStoryTest extends TestSuite {
       assert(elem.find("." + Color.White.code).length == 2)
     }
 
+    '初期状態でCandidateが4つある {
+      assert(elem.find(".candidate").length == 4)
+    }
+
     'Reversiが置かれていないCellをクリックするとReversiが置かれる {
       val cellElem = elem.find("tr:eq(3) > td:eq(2)")
       cellElem.click()

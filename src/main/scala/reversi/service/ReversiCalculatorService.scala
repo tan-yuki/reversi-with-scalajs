@@ -14,26 +14,69 @@ object ReversiCalculatorService {
   )
 
   /**
-   * 新たに追加されたReversiを元に既存のReversiの状態を変更する
+   * 渡された色のReversiが置けるPointのリストを返す。
+   * Reversiが置ける条件は、一つでも裏返せるReversiが存在する場所。
+   * 
+   * @param color Color
+   * @param currentCellCollection CellCollection
+   *                              
+   * @return Pointのリスト
+   */
+  def searchCandidate(color: Color,
+                      currentCellCollection: CellCollection): Seq[Point] = {
+
+    currentCellCollection.foldLeft[List[Point]](List.empty) {
+      (acc: List[Point], cell: Cell) =>
+        cell match {
+          case c if c.hasReversi => acc
+          case c =>
+            val reversiblePoints = searchReversiblePoints(color, cell.point, currentCellCollection)
+
+            if (reversiblePoints.isEmpty) acc else cell.point :: acc
+        }
+    }.toSeq
+  }
+
+  /**
+   * 新たにReversiを追加し、追加したReversiを元に既存のReversiの状態を変更する
    * 同じ色で挟み込まれたReversiの裏返しを実行
    *
-   * @param color 新たに追加されたReversiの色
-   * @param point 新たに追加されたReversiの場所
-   * @param currentCellCollection 現在のCellCollectionの状態（新たにReversiを追加した状態）
-   * @return 新しい状態のCellCollection
+   * @param reversi 新たに追加するReversi
+   * @param point 新たに追加するReversiの場所
+   * @param currentCellCollection 現在のCellCollectionの状態
+   * @return Reversiを追加し裏返しを行った状態のCellCollection
    */
-  def calculate(color: Color, point: Point, currentCellCollection: CellCollection): CellCollection = {
+  def addReversi(reversi: Reversi, point: Point, currentCellCollection: CellCollection): CellCollection = {
     val cell = currentCellCollection.find(point)
 
-    require(cell.isDefined && cell.get.hasReversiColoredBy(color))
+    require(cell.isDefined && !cell.get.hasReversi)
 
-    val points = vectors.flatMap { v =>
-      searchToggleReversi(color, point, v, currentCellCollection)
-    }
+    val newCollection = currentCellCollection.replaceCell(Cell(point, Some(reversi)))
 
-    currentCellCollection.map {
+    val points = searchReversiblePoints(reversi.color, point, newCollection)
+
+    newCollection.map {
       case c if points.contains(c.point) => c.toggleReversi()
       case c => c
+    }
+  }
+
+  /**
+   * 裏返せるReversiを全方角で検索する。
+   * 裏返せるReversiが見つかった場合はそのPointのリストを返す。
+   *
+   * @param color Reversiの色。
+   *              この色に関する裏返しを行えるPointを探す。
+   * @param point 起点となるPoint。
+   *              このPointに指定された色が置かれた際の裏返されるPointを探す。
+   * @param collection 現在のCellCollection
+   * @return Seq[Point]
+   */
+  private def searchReversiblePoints(color: Color,
+                                  point: Point,
+                                  collection: CellCollection) : Seq[Point] = {
+    vectors.flatMap { v =>
+      searchReversiblePointsWithVector(v, color, point, collection)
     }
   }
 
@@ -41,16 +84,18 @@ object ReversiCalculatorService {
    * Vector方向に裏返せるReversiを検索する。
    * 裏返せるReversiが見つかった場合はそのPointのリストを返す　
    *
-   * @param color 追加したReversiの色
-   * @param point 追加したReversiのPoint
-   * @param vector 裏返せるReversiを検索する方向
+   * @param vector 裏返せるReversiを検索する方向。
+   * @param color Reversiの色。
+   *              この色に関する裏返しを行えるPointを探す。
+   * @param point 起点となるPoint。
+   *              このPointに指定された色が置かれた際の裏返されるPointを探す。
    * @param collection 現在のCellCollection
    *
    * @return Seq[Point]
    */
-  private def searchToggleReversi(color: Color,
+  private def searchReversiblePointsWithVector(vector: Vector,
+                                  color: Color,
                                   point: Point,
-                                  vector: Vector,
                                   collection: CellCollection) : Seq[Point] = {
 
     def go(acc:List[Point], point: Point):List[Point] = {
