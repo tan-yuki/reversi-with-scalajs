@@ -1,16 +1,16 @@
 package reversi.models
 
-case class Board(edge: Int, cells: Seq[Cell]) {
+case class Board(edge: Int, cellCollection: CellCollection) {
   require(edge >= 4 && edge % 2 == 0)
-  require(cells.length == edge * edge)
+  require(cellCollection.length == edge * edge)
 
   def addReversi(x: Int, y: Int, reversi: Reversi): Board = {
-    val newCells = cells.map {
+    val newCells = cellCollection.map {
       case c if c.x == x && c.y == y => Cell(x, y, Some(reversi))
       case c => c
     }
 
-    copy(cells = newCells)
+    copy(cellCollection = newCells)
   }
 }
 
@@ -43,6 +43,5 @@ object Board {
     initialReversiMapping(edge).foldLeft(emptyBoard) {
       case (board, ((x, y), reversi)) => board.addReversi(x, y, reversi)
     }
-
   }
 }

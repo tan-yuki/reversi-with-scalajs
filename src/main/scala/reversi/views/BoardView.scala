@@ -18,7 +18,7 @@ case class BoardView(board: Board) extends View {
       val recordElem = jQuery("<tr />")
 
       // Get cells fixed by "y"-axis
-      val cellRecord = board.cells.filter(_.y == y)
+      val cellRecord = board.cellCollection.filter(_.y == y)
 
       // Append cell dom to <tr> elem
       recordElem.append(cellRecord.map(c => CellView(c).render()): _*)
