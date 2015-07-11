@@ -19,7 +19,7 @@ object CellCollectionTest extends TestSuite {
     '初期状態のCellCollectionのx3y4の位置に白Reversiを置くとx4y4のReversiが白になる {
       val initialCellCollection = Board.initialize(8).cellCollection
       val newCellCollection = initialCellCollection.addReversiAndCalculate(
-        Point(3, 4), Reversi(Color.White))
+        Point(3, 4), Reversi(Color.White)).get
 
       assert(newCellCollection.count(_.hasReversi) == 5)
       assert(newCellCollection.count(_.hasReversiColoredBy(Color.Black)) == 1)

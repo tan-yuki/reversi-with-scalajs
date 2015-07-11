@@ -1,8 +1,13 @@
 package reversi.views
 
 import org.scalajs.jquery._
+
 import reversi.ReversiApp
+import reversi.exception.UnknownException
 import reversi.models._
+import reversi.service.exception.NotFoundReversibleReversiException
+
+import scala.util.{Success, Failure}
 
 case class CellView(cell: Cell, cellCollection: CellCollection) extends View {
 
@@ -39,10 +44,20 @@ case class CellView(cell: Cell, cellCollection: CellCollection) extends View {
           e.stopPropagation()
 
           val reversi = Reversi(color)
-          val newCellCollection = cellCollection.addReversiAndCalculate(
-            cell.point, reversi)
+          cellCollection.addReversiAndCalculate(cell.point, reversi) match {
+            case Failure(e: NotFoundReversibleReversiException)
+              =>
+            /*
+             * TODO:
+             *   絶対に起こりえないから省略したいけど、省略するとwarningがでる
+             *   どうすればいいのかよくわからない
+             */
+            case Failure(throwable)
+              => throw new UnknownException(cause = throwable)
+            case Success(newCellCollection)
+              => ReversiApp.refresh(newCellCollection)
+          }
 
-          ReversiApp.refresh(newCellCollection)
         }
     }
 

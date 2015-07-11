@@ -2,6 +2,8 @@ package reversi.models
 
 import reversi.service.ReversiCalculatorService
 
+import scala.util.Try
+
 trait CellCollection extends Seq[Cell] {
 
   private lazy val _candidates = Map(
@@ -55,7 +57,7 @@ trait CellCollection extends Seq[Cell] {
    * @param reversi 新たに追加するReversi
    * @return CellCollection
    */
-  def addReversiAndCalculate(p:Point, reversi: Reversi): CellCollection =
+  def addReversiAndCalculate(p:Point, reversi: Reversi): Try[CellCollection] =
     ReversiCalculatorService.addReversi(reversi, p, this)
 
 }

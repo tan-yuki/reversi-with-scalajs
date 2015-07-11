@@ -1,6 +1,9 @@
 package reversi.service
 
 import reversi.models._
+import reversi.service.exception.NotFoundReversibleReversiException
+
+import scala.util.{Success, Failure, Try}
 
 /**
  * Reversi裏返しのロジック
@@ -41,23 +44,35 @@ object ReversiCalculatorService {
    * 新たにReversiを追加し、追加したReversiを元に既存のReversiの状態を変更する
    * 同じ色で挟み込まれたReversiの裏返しを実行
    *
+   * @throws NotFoundReversibleReversiException
+   *     Reversiを置こうとした箇所に置いても裏返せる他のReversiがない場合に投げられる
+   *
    * @param reversi 新たに追加するReversi
    * @param point 新たに追加するReversiの場所
-   * @param currentCellCollection 現在のCellCollectionの状態
+   * @param cellCollection 現在のCellCollectionの状態
    * @return Reversiを追加し裏返しを行った状態のCellCollection
    */
-  def addReversi(reversi: Reversi, point: Point, currentCellCollection: CellCollection): CellCollection = {
-    val cell = currentCellCollection.find(point)
+  def addReversi(reversi: Reversi, point: Point, cellCollection: CellCollection): Try[CellCollection] = {
+    val cell = cellCollection.find(point)
 
     require(cell.isDefined && !cell.get.hasReversi)
 
-    val newCollection = currentCellCollection.replaceCell(Cell(point, Some(reversi)))
+    // 置けるPointがない場合は失敗とみなす
+    val points = searchReversiblePoints(reversi.color, point, cellCollection)
 
-    val points = searchReversiblePoints(reversi.color, point, newCollection)
+    points match {
+      case p if p.isEmpty =>
+        Failure(new NotFoundReversibleReversiException)
+      case _ =>
+        // 指定された箇所にReversiを置く
+        val newCollection = cellCollection.replaceCell(Cell(point, Some(reversi)))
 
-    newCollection.map {
-      case c if points.contains(c.point) => c.toggleReversi()
-      case c => c
+        // 裏返して返す
+        Success(newCollection.map {
+          case c if points.contains(c.point) => c.toggleReversi()
+          case c => c
+        })
+        
     }
   }
 

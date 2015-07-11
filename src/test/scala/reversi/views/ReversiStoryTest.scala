@@ -35,14 +35,22 @@ object ReversiStoryTest extends TestSuite {
       assert(elem.find(".candidate").length == 4)
     }
 
-    'Reversiが置かれていないCellをクリックするとReversiが置かれる {
-      val cellElem = elem.find("tr:eq(3) > td:eq(2)")
+    'CandidateでないCellをクリックしてもReversiが置かれない {
+      val cellElem = elem.find("tr:eq(0) > td:eq(0)")
+      val count = elem.find(".reversi").length
       cellElem.click()
-      assert(elem.find(".reversi").length == 5)
+      assert(elem.find(".reversi").length == count)
+    }
+
+    'CandidateのCellをクリックするとReversiが置かれる {
+      val cellElem = elem.find(".candidate:eq(0)")
+      val count = elem.find(".reversi").length
+      cellElem.click()
+      assert(elem.find(".reversi").length == count + 1)
     }
 
     'Reversiが置かれているCellをクリックしてもなにも変わらない {
-      val cellElem = elem.find("tr:eq(3) > td:eq(3)")
+      val cellElem = elem.find(".reversi:eq(0)")
       val count = elem.find(".reversi").length
       cellElem.click()
       assert(elem.find(".reversi").length == count)
