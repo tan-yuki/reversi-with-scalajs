@@ -1,6 +1,6 @@
 package reversi
 
-import reversi.models.{CellCollection, Board}
+import reversi.models.{Player, CellCollection, Board}
 
 import reversi.views.BoardView
 
@@ -12,12 +12,8 @@ object ReversiApp extends js.JSApp {
 
   val Edge = 8
 
-  def main(): Unit = refresh(Board.initialize(Edge))
+  def main(): Unit = refresh(Board.initialize(Edge, Player.Black))
 
   def refresh(board: Board): Unit =
     jQuery("#main").empty().append(BoardView(board).render())
-
-  def refresh(cellCollection: CellCollection): Unit =
-    refresh(Board(Edge, cellCollection))
-
 }

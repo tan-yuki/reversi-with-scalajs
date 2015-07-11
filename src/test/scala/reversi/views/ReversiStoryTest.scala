@@ -1,7 +1,7 @@
 package reversi.views
 
 import reversi.ReversiApp
-import reversi.models.{Reversi, Color, Board}
+import reversi.models.{Player, Reversi, Color, Board}
 
 import utest._
 import org.scalajs.jquery._
@@ -9,7 +9,7 @@ import org.scalajs.jquery._
 object ReversiStoryTest extends TestSuite {
 
   jQuery("body").append(s"""<div id="main"></div>""")
-  ReversiApp.refresh(Board.initialize(ReversiApp.Edge))
+  ReversiApp.refresh(Board.initialize(ReversiApp.Edge, Player.Black))
 
   val elem = jQuery("#main")
   val edge = ReversiApp.Edge
@@ -42,11 +42,26 @@ object ReversiStoryTest extends TestSuite {
       assert(elem.find(".reversi").length == count)
     }
 
-    'CandidateのCellをクリックするとReversiが置かれる {
+    'CandidateのCellをクリックすると黒のReversiが置かれる {
       val cellElem = elem.find(".candidate:eq(0)")
-      val count = elem.find(".reversi").length
+      val reversiCount = elem.find(".reversi").length
+      val blackCount = elem.find(".black").length
+      val whiteCount = elem.find(".white").length
       cellElem.click()
-      assert(elem.find(".reversi").length == count + 1)
+      assert(elem.find(".reversi").length == reversiCount + 1)
+      assert(elem.find(".black").length == blackCount + 2)
+      assert(elem.find(".white").length < whiteCount)
+    }
+
+    '黒を置いた次にCandidateのCellをクリックすると白のReversiが置かれる {
+      val cellElem = elem.find(".candidate:eq(0)")
+      val reversiCount = elem.find(".reversi").length
+      val blackCount = elem.find(".black").length
+      val whiteCount = elem.find(".white").length
+      cellElem.click()
+      assert(elem.find(".reversi").length == reversiCount + 1)
+      assert(elem.find(".black").length < blackCount)
+      assert(elem.find(".white").length >= whiteCount + 2)
     }
 
     'Reversiが置かれているCellをクリックしてもなにも変わらない {

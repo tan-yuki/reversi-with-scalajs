@@ -1,8 +1,14 @@
 package reversi.models
 
+import reversi.ReversiApp
 import utest._
 
 object CellCollectionTest extends TestSuite {
+
+  def createInitialBoard(edge:Int = ReversiApp.Edge,
+                         player:Player = Player.Black) = {
+    Board.initialize(edge, player)
+  }
 
 
   def tests = TestSuite {
@@ -17,7 +23,7 @@ object CellCollectionTest extends TestSuite {
     }
 
     '初期状態のCellCollectionのx3y4の位置に白Reversiを置くとx4y4のReversiが白になる {
-      val initialCellCollection = Board.initialize(8).cellCollection
+      val initialCellCollection = createInitialBoard(edge = 8).cellCollection
       val newCellCollection = initialCellCollection.addReversiAndCalculate(
         Point(3, 4), Reversi(Color.White)).get
 
@@ -28,7 +34,7 @@ object CellCollectionTest extends TestSuite {
     }
 
     '初期状態のCellCollectionの場合黒のCandidatesは4つ {
-      val initialCellCollection = Board.initialize(8).cellCollection
+      val initialCellCollection = createInitialBoard(edge = 8).cellCollection
       val candidates = initialCellCollection.candidates(Color.Black)
 
       assert(candidates.length == 4)
@@ -39,7 +45,7 @@ object CellCollectionTest extends TestSuite {
     }
 
     '初期状態のCellCollectionの場合白のCandidatesは4つ {
-      val initialCellCollection = Board.initialize(8).cellCollection
+      val initialCellCollection = createInitialBoard(edge = 8).cellCollection
       val candidates = initialCellCollection.candidates(Color.White)
 
       assert(candidates.length == 4)

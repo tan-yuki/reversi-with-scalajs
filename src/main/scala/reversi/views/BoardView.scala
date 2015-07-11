@@ -12,16 +12,15 @@ case class BoardView(board: Board) extends View {
   override def render(): JQuery = {
 
     val recordsElem: Seq[JQuery] = (1 to board.edge).map { y =>
-      // Create <tr> dom
-      val recordElem = jQuery("<tr />")
 
       // Get cells fixed by "y"-axis
       val cellRecord = board.cellCollection.filter(_.point.y == y)
 
-      // Append cell dom to <tr> elem
-      recordElem.append(cellRecord.map(c => CellView(c, board.cellCollection).render()): _*)
+      // Create cell elements
+      val recordCellsElem:Seq[JQuery] = cellRecord.map(c => CellView(c, board).render())
 
-      recordElem
+      // Append cell dom to <tr> elem
+      jQuery("<tr />").append(recordCellsElem: _*)
     }.toSeq
 
 
