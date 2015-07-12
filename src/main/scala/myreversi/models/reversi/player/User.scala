@@ -1,6 +1,6 @@
 package myreversi.models.reversi.player
 
-trait User extends Player {}
+trait User extends Player
 
 object User {
   case object Black extends BlackPlayer with User

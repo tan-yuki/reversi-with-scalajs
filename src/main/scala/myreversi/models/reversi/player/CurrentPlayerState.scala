@@ -1,14 +1,12 @@
 package myreversi.models.reversi.player
 
-import myreversi.models.reversi.Reversi
-
 case class CurrentPlayerState(player: Player, playerPare: PlayerPare) {
 
   lazy val nextState: CurrentPlayerState = copy(
     player = playerPare.oppositePlayer(player)
   )
 
-  lazy val reversi = Reversi(player.color)
+  lazy val color = player.color
 }
 
 object CurrentPlayerState {

@@ -1,7 +1,8 @@
 package myreversi
 
-import myreversi.models.reversi.player.{CurrentPlayerState, User, PlayerPare, Player}
-import myreversi.models.reversi.Board
+import myreversi.models.reversi.player._
+import myreversi.models.reversi.{CellCollection, Board}
+import myreversi.service.strategy.RandomStrategy
 
 import myreversi.views.BoardView
 
@@ -13,7 +14,7 @@ object ReversiApp extends js.JSApp {
 
   val Edge = 8
 
-  val playerPare: PlayerPare = PlayerPare(User.Black, User.White)
+  val playerPare: PlayerPare = PlayerPare(User.Black, CPU.White(new RandomStrategy()))
 
   def main(): Unit = refresh(Board.initialize(Edge, CurrentPlayerState.initialState(playerPare)))
 

@@ -1,10 +1,16 @@
 package myreversi.views
 
+import myreversi.ReversiApp
 import org.scalajs.jquery._
+
 import myreversi.models.reversi.Board
+import myreversi.models.reversi.player.{CurrentPlayerState, CPU, User}
+
+import scala.scalajs.js.timers
 
 case class BoardView(board: Board) extends View {
 
+  private val CPUActionInterval = 1000
 
   override protected[this] val elem: JQuery =
     jQuery(s"""<table class="board" />""")
@@ -23,10 +29,24 @@ case class BoardView(board: Board) extends View {
       jQuery("<tr />").append(recordCellsElem: _*)
     }.toSeq
 
-
     elem.append(recordsElem: _*)
 
-    elem
+    // Attach cpu event
+    val playerState = board.currentPlayerState
+
+    playerState.player match {
+      case u:User => elem
+      case c:CPU  =>
+        timers.setTimeout(CPUActionInterval) {
+          val newCellCollection = c.strategy.toggleReversi(c, board.cellCollection)
+
+          ReversiApp.refresh(board.copy(
+            cellCollection = newCellCollection,
+            currentPlayerState = playerState.nextState
+          ))
+        }
+        elem
+    }
   }
 }
 

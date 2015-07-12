@@ -1,5 +1,6 @@
 package myreversi.models
 
+import myreversi.service.strategy.RandomStrategy
 import myreversi.models.reversi.player.{Player, CPU}
 import utest._
 
@@ -8,16 +9,16 @@ object CPUTest extends TestSuite {
 
   def tests = TestSuite {
     'CPUBlackはPlayer {
-      assert(CPU.Black.isInstanceOf[Player])
+      assert(CPU.Black(new RandomStrategy()).isInstanceOf[Player])
     }
     'CPUWhiteはCPU {
-      assert(CPU.White.isInstanceOf[Player])
+      assert(CPU.White(new RandomStrategy()).isInstanceOf[Player])
     }
     'CPUBlackはCPU {
-      assert(CPU.Black.isInstanceOf[CPU])
+      assert(CPU.Black(new RandomStrategy()).isInstanceOf[CPU])
     }
     'CPUWhiteはCPU {
-      assert(CPU.White.isInstanceOf[CPU])
+      assert(CPU.White(new RandomStrategy()).isInstanceOf[CPU])
     }
 
   }

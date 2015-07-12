@@ -1,8 +1,13 @@
 package myreversi.models.reversi.player
 
-trait CPU extends Player {}
+import myreversi.service.strategy.CPUStrategy
+
+
+trait CPU extends Player {
+  val strategy: CPUStrategy
+}
 
 object CPU {
-  case object Black extends BlackPlayer with CPU
-  case object White extends WhitePlayer with CPU
+  case class Black(strategy: CPUStrategy) extends BlackPlayer with CPU
+  case class White(strategy: CPUStrategy) extends WhitePlayer with CPU
 }
