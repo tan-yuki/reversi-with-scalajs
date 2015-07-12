@@ -1,7 +1,7 @@
 package myreversi.models
 
 import myreversi.ReversiApp
-import myreversi.models.player.{User, PlayerPare, CurrentPlayerState, Player}
+import myreversi.models.reversi.player.{User, PlayerPare, CurrentPlayerState, Player}
 import myreversi.models.reversi.{Reversi, CellCollection, Cell, Board}
 import myreversi.models.shared.{Color, Point}
 import utest._

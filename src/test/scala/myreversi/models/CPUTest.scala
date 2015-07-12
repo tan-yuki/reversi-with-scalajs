@@ -1,6 +1,6 @@
 package myreversi.models
 
-import myreversi.models.player.{Player, CPU}
+import myreversi.models.reversi.player.{Player, CPU}
 import utest._
 
 object CPUTest extends TestSuite {

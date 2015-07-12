@@ -1,6 +1,6 @@
 package myreversi.models
 
-import myreversi.models.player.{Player, User}
+import myreversi.models.reversi.player.{Player, User}
 import utest._
 
 object UserTest extends TestSuite {

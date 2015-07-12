@@ -1,4 +1,4 @@
-package myreversi.models.player
+package myreversi.models.reversi.player
 
 case class PlayerPare(blackPlayer: BlackPlayer, whitePlayer: WhitePlayer) {
   val firstPlayer = blackPlayer

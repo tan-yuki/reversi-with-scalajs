@@ -1,4 +1,4 @@
-package myreversi.models.player
+package myreversi.models.reversi.player
 
 trait CPU extends Player {}
 

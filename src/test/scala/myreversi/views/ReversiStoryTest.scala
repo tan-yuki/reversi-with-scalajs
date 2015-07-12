@@ -1,7 +1,7 @@
 package myreversi.views
 
 import myreversi.ReversiApp
-import myreversi.models.player.CurrentPlayerState
+import myreversi.models.reversi.player.CurrentPlayerState
 import myreversi.models.reversi.Board
 import myreversi.models.shared.Color
 import org.scalajs.jquery._

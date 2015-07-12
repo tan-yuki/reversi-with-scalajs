@@ -1,6 +1,6 @@
 package myreversi.models.reversi
 
-import myreversi.models.player.{CurrentPlayerState, PlayerPare, Player}
+import myreversi.models.reversi.player.CurrentPlayerState
 import myreversi.models.shared.{Color, Point}
 
 case class Board(edge: Int,

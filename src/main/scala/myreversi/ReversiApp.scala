@@ -1,6 +1,6 @@
 package myreversi
 
-import myreversi.models.player.{CurrentPlayerState, User, PlayerPare, Player}
+import myreversi.models.reversi.player.{CurrentPlayerState, User, PlayerPare, Player}
 import myreversi.models.reversi.Board
 
 import myreversi.views.BoardView

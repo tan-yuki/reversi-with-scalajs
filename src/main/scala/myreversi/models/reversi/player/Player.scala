@@ -1,4 +1,4 @@
-package myreversi.models.player
+package myreversi.models.reversi.player
 
 import myreversi.models.shared.Color
 

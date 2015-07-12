@@ -1,6 +1,6 @@
 package myreversi.views
 
-import myreversi.models.player.Player
+import myreversi.models.reversi.player.Player
 import myreversi.models.reversi.{Reversi, Cell, Board}
 import org.scalajs.jquery._
 
