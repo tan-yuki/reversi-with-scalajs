@@ -18,7 +18,7 @@ case class CellView(cell: Cell,
 
   override def render(): JQuery = {
 
-    val player = board.player
+    val player = board.currentPlayerState.player
 
     val elemWithCandidates = renderCandidates(elem, player)
 
@@ -58,10 +58,11 @@ case class CellView(cell: Cell,
             case Failure(throwable)
               => throw new UnknownException(cause = throwable)
             case Success(newCellCollection)
-              => ReversiApp.refresh(board.copy(
-                cellCollection = newCellCollection,
-                player = currentPlayer.opposite
-              ))
+              =>
+                ReversiApp.refresh(board.copy(
+                  cellCollection = newCellCollection,
+                  currentPlayerState = board.currentPlayerState.nextState
+                ))
           }
 
         }

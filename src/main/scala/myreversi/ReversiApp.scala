@@ -1,6 +1,6 @@
 package myreversi
 
-import myreversi.models.player.Player
+import myreversi.models.player.{CurrentPlayerState, User, PlayerPare, Player}
 import myreversi.models.reversi.Board
 
 import myreversi.views.BoardView
@@ -13,7 +13,9 @@ object ReversiApp extends js.JSApp {
 
   val Edge = 8
 
-  def main(): Unit = refresh(Board.initialize(Edge, Player.Black))
+  val playerPare: PlayerPare = PlayerPare(User.Black, User.White)
+
+  def main(): Unit = refresh(Board.initialize(Edge, CurrentPlayerState.initialState(playerPare)))
 
   def refresh(board: Board): Unit =
     jQuery("#main").empty().append(BoardView(board).render())

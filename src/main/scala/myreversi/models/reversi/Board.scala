@@ -1,18 +1,18 @@
 package myreversi.models.reversi
 
-import myreversi.models.player.Player
+import myreversi.models.player.{CurrentPlayerState, PlayerPare, Player}
 import myreversi.models.shared.{Color, Point}
 
 case class Board(edge: Int,
                  cellCollection: CellCollection,
-                 player: Player) {
+                 currentPlayerState: CurrentPlayerState) {
 
   require(edge >= 4 && edge % 2 == 0)
   require(cellCollection.length == edge * edge)
 
-  def addReversi(x: Int, y: Int, reversi: Reversi): Board = {
+  private def addReversi(p: Point, reversi: Reversi): Board = {
     val newCells = cellCollection.map {
-      case c if c.point.x == x && c.point.y == y => Cell(Point(x, y), Some(reversi))
+      case c if c.isPlacedAt(p) => Cell(p, Some(reversi))
       case c => c
     }
 
@@ -21,14 +21,14 @@ case class Board(edge: Int,
 }
 
 object Board {
-  private def initialReversiMapping(edge: Int): Map[(Int,Int), Reversi] = {
+  private def initialReversiMapping(edge: Int): Map[Point, Reversi] = {
     val middle:Int = edge / 2
 
     Map(
-      (middle,     middle)     -> Reversi(Color.Black),
-      (middle + 1, middle)     -> Reversi(Color.White),
-      (middle,     middle + 1) -> Reversi(Color.White),
-      (middle + 1, middle + 1) -> Reversi(Color.Black)
+      Point(middle,     middle)     -> Reversi(Color.Black),
+      Point(middle + 1, middle)     -> Reversi(Color.White),
+      Point(middle,     middle + 1) -> Reversi(Color.White),
+      Point(middle + 1, middle + 1) -> Reversi(Color.Black)
     )
   }
 
@@ -36,10 +36,10 @@ object Board {
    * Reversiを何も置いていない状態のBoardを生成する
    *
    * @param edge 一辺の長さ
-   * @param currentPlayer Current player
+   * @param currentPlayerState Current player state
    * @return
    */
-  def createEmptyBoard(edge: Int, currentPlayer: Player): Board = {
+  def createEmptyBoard(edge: Int, currentPlayerState: CurrentPlayerState): Board = {
     val cells: Seq[Cell] = (for {
       x <- (1 to edge).toList
       y <- (1 to edge).toList
@@ -47,21 +47,21 @@ object Board {
       Cell(Point.at(x, y), None)
     }).toSeq
 
-    Board(edge, cells, currentPlayer)
+    Board(edge, cells, currentPlayerState)
   }
 
   /**
    * 初期のReversiを置いた状態のBoardを生成する
    *
    * @param edge 一辺の長さ
-   * @param currentPlayer Current player
+   * @param currentPlayerState Current player state
    * @return
    */
-  def initialize(edge: Int, currentPlayer: Player): Board = {
-    val emptyBoard: Board = createEmptyBoard(edge, currentPlayer)
+  def initialize(edge: Int, currentPlayerState: CurrentPlayerState): Board = {
+    val emptyBoard: Board = createEmptyBoard(edge, currentPlayerState)
 
     initialReversiMapping(edge).foldLeft(emptyBoard) {
-      case (board, ((x, y), reversi)) => board.addReversi(x, y, reversi)
+      case (board, (p, reversi)) => board.addReversi(p, reversi)
     }
   }
 }

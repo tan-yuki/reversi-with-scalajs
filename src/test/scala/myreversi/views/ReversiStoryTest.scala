@@ -1,8 +1,7 @@
 package myreversi.views
 
 import myreversi.ReversiApp
-
-import myreversi.models.player.Player
+import myreversi.models.player.CurrentPlayerState
 import myreversi.models.reversi.Board
 import myreversi.models.shared.Color
 import org.scalajs.jquery._
@@ -11,7 +10,10 @@ import utest._
 object ReversiStoryTest extends TestSuite {
 
   jQuery("body").append(s"""<div id="main"></div>""")
-  ReversiApp.refresh(Board.initialize(ReversiApp.Edge, Player.Black))
+
+  ReversiApp.refresh(Board.initialize(
+    ReversiApp.Edge,
+    CurrentPlayerState.initialState(ReversiApp.playerPare)))
 
   val elem = jQuery("#main")
   val edge = ReversiApp.Edge

@@ -1,5 +1,8 @@
 package myreversi.models.player
 
-class CPU {
+trait CPU extends Player {}
 
+object CPU {
+  case object Black extends BlackPlayer with CPU
+  case object White extends WhitePlayer with CPU
 }
