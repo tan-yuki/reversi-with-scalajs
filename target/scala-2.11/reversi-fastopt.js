@@ -1062,40 +1062,41 @@ var $isArrayOf_sc_GenTraversableOnce = (function(obj, depth) {
 var $asArrayOf_sc_GenTraversableOnce = (function(obj, depth) {
   return (($isArrayOf_sc_GenTraversableOnce(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.GenTraversableOnce;", depth))
 });
-var $s_Lreversi_models_CellCollection$class__candidates__Lreversi_models_CellCollection__Lreversi_models_Color__sc_Seq = (function($$this, color) {
-  return $as_sc_Seq($$this.reversi$models$CellCollection$$$undcandidates__sci_Map().get__O__s_Option(color.code$1).get__O())
+/** @constructor */
+var $c_Lmyreversi_models_player_Player = (function() {
+  $c_O.call(this);
+  this.color$1 = null
 });
-var $s_Lreversi_models_CellCollection$class__find__Lreversi_models_CellCollection__Lreversi_models_Point__s_Option = (function($$this, p) {
-  var this$1 = $$this.iterator__sc_Iterator();
-  var res = $m_s_None$();
-  while ((res.isEmpty__Z() && this$1.hasNext__Z())) {
-    var e = this$1.next__O();
-    var x$1 = $as_Lreversi_models_Cell(e);
-    if (x$1.isPlacedAt__I__I__Z(p.x$1, p.y$1)) {
-      res = new $c_s_Some().init___O(e)
+$c_Lmyreversi_models_player_Player.prototype = new $h_O();
+$c_Lmyreversi_models_player_Player.prototype.constructor = $c_Lmyreversi_models_player_Player;
+/** @constructor */
+var $h_Lmyreversi_models_player_Player = (function() {
+  /*<skip>*/
+});
+$h_Lmyreversi_models_player_Player.prototype = $c_Lmyreversi_models_player_Player.prototype;
+$c_Lmyreversi_models_player_Player.prototype.init___Lmyreversi_models_shared_Color = (function(color) {
+  this.color$1 = color;
+  return this
+});
+$c_Lmyreversi_models_player_Player.prototype.opposite__Lmyreversi_models_player_Player = (function() {
+  var x = $m_Lmyreversi_models_player_Player$Black$();
+  if ((x === this)) {
+    return $m_Lmyreversi_models_player_Player$White$()
+  } else {
+    var x$3 = $m_Lmyreversi_models_player_Player$White$();
+    if ((x$3 === this)) {
+      return $m_Lmyreversi_models_player_Player$Black$()
+    } else {
+      throw new $c_s_MatchError().init___O(this)
     }
-  };
-  return res
+  }
 });
-var $s_Lreversi_models_CellCollection$class__replaceCell__Lreversi_models_CellCollection__Lreversi_models_Cell__Lreversi_models_CellCollection = (function($$this, cell) {
-  var this$1 = $m_sc_Seq$();
-  var bf = this$1.ReusableCBFInstance$2;
-  var b = $s_sc_TraversableLike$class__builder$1__p0__sc_TraversableLike__scg_CanBuildFrom__scm_Builder($$this, bf);
-  var this$2 = $$this.iterator__sc_Iterator();
-  while (this$2.hasNext__Z()) {
-    var arg1 = this$2.next__O();
-    var x0$2 = $as_Lreversi_models_Cell(arg1);
-    b.$$plus$eq__O__scm_Builder((x0$2.isPlacedAt__Lreversi_models_Point__Z(cell.point$1) ? cell : x0$2))
-  };
-  var cells = $as_sc_Seq(b.result__O());
-  return new $c_Lreversi_models_CellCollection$$anon$1().init___sc_Seq(cells)
-});
-var $s_Lreversi_models_CellCollection$class__reversi$models$CellCollection$$$undcandidates__Lreversi_models_CellCollection__sci_Map = (function($$this) {
-  var $$this$1 = $m_Lreversi_models_Color$Black$().code$1;
-  var y = $m_Lreversi_service_ReversiCalculatorService$().searchCandidate__Lreversi_models_Color__Lreversi_models_CellCollection__sc_Seq($m_Lreversi_models_Color$Black$(), $$this);
+var $s_Lmyreversi_models_reversi_CellCollection$class__myreversi$models$reversi$CellCollection$$$undcandidates__Lmyreversi_models_reversi_CellCollection__sci_Map = (function($$this) {
+  var $$this$1 = $m_Lmyreversi_models_shared_Color$Black$().code$1;
+  var y = $m_Lmyreversi_service_ReversiCalculatorService$().searchCandidate__Lmyreversi_models_shared_Color__Lmyreversi_models_reversi_CellCollection__sc_Seq($m_Lmyreversi_models_shared_Color$Black$(), $$this);
   var jsx$1 = new $c_T2().init___O__O($$this$1, y);
-  var $$this$2 = $m_Lreversi_models_Color$White$().code$1;
-  var y$1 = $m_Lreversi_service_ReversiCalculatorService$().searchCandidate__Lreversi_models_Color__Lreversi_models_CellCollection__sc_Seq($m_Lreversi_models_Color$White$(), $$this);
+  var $$this$2 = $m_Lmyreversi_models_shared_Color$White$().code$1;
+  var y$1 = $m_Lmyreversi_service_ReversiCalculatorService$().searchCandidate__Lmyreversi_models_shared_Color__Lmyreversi_models_reversi_CellCollection__sc_Seq($m_Lmyreversi_models_shared_Color$White$(), $$this);
   var array = [jsx$1, new $c_T2().init___O__O($$this$2, y$1)];
   var this$6 = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
   var i = 0;
@@ -1108,69 +1109,68 @@ var $s_Lreversi_models_CellCollection$class__reversi$models$CellCollection$$$und
   };
   return $as_sci_Map(this$6.elems$1)
 });
+var $s_Lmyreversi_models_reversi_CellCollection$class__replaceCell__Lmyreversi_models_reversi_CellCollection__Lmyreversi_models_reversi_Cell__Lmyreversi_models_reversi_CellCollection = (function($$this, cell) {
+  var this$1 = $m_sc_Seq$();
+  var bf = this$1.ReusableCBFInstance$2;
+  var b = $s_sc_TraversableLike$class__builder$1__p0__sc_TraversableLike__scg_CanBuildFrom__scm_Builder($$this, bf);
+  var this$2 = $$this.iterator__sc_Iterator();
+  while (this$2.hasNext__Z()) {
+    var arg1 = this$2.next__O();
+    var x0$2 = $as_Lmyreversi_models_reversi_Cell(arg1);
+    b.$$plus$eq__O__scm_Builder((x0$2.isPlacedAt__Lmyreversi_models_shared_Point__Z(cell.point$1) ? cell : x0$2))
+  };
+  var cells = $as_sc_Seq(b.result__O());
+  return new $c_Lmyreversi_models_reversi_CellCollection$$anon$1().init___sc_Seq(cells)
+});
+var $s_Lmyreversi_models_reversi_CellCollection$class__candidates__Lmyreversi_models_reversi_CellCollection__Lmyreversi_models_shared_Color__sc_Seq = (function($$this, color) {
+  return $as_sc_Seq($$this.myreversi$models$reversi$CellCollection$$$undcandidates__sci_Map().get__O__s_Option(color.code$1).get__O())
+});
+var $s_Lmyreversi_models_reversi_CellCollection$class__find__Lmyreversi_models_reversi_CellCollection__Lmyreversi_models_shared_Point__s_Option = (function($$this, p) {
+  var this$1 = $$this.iterator__sc_Iterator();
+  var res = $m_s_None$();
+  while ((res.isEmpty__Z() && this$1.hasNext__Z())) {
+    var e = this$1.next__O();
+    var x$1 = $as_Lmyreversi_models_reversi_Cell(e);
+    if (x$1.isPlacedAt__I__I__Z(p.x$1, p.y$1)) {
+      res = new $c_s_Some().init___O(e)
+    }
+  };
+  return res
+});
 /** @constructor */
-var $c_Lreversi_models_Color = (function() {
+var $c_Lmyreversi_models_shared_Color = (function() {
   $c_O.call(this);
   this.code$1 = null
 });
-$c_Lreversi_models_Color.prototype = new $h_O();
-$c_Lreversi_models_Color.prototype.constructor = $c_Lreversi_models_Color;
+$c_Lmyreversi_models_shared_Color.prototype = new $h_O();
+$c_Lmyreversi_models_shared_Color.prototype.constructor = $c_Lmyreversi_models_shared_Color;
 /** @constructor */
-var $h_Lreversi_models_Color = (function() {
+var $h_Lmyreversi_models_shared_Color = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_Color.prototype = $c_Lreversi_models_Color.prototype;
-$c_Lreversi_models_Color.prototype.init___T = (function(code) {
+$h_Lmyreversi_models_shared_Color.prototype = $c_Lmyreversi_models_shared_Color.prototype;
+$c_Lmyreversi_models_shared_Color.prototype.init___T = (function(code) {
   this.code$1 = code;
   return this
 });
 /** @constructor */
-var $c_Lreversi_models_Player = (function() {
-  $c_O.call(this);
-  this.color$1 = null
-});
-$c_Lreversi_models_Player.prototype = new $h_O();
-$c_Lreversi_models_Player.prototype.constructor = $c_Lreversi_models_Player;
-/** @constructor */
-var $h_Lreversi_models_Player = (function() {
-  /*<skip>*/
-});
-$h_Lreversi_models_Player.prototype = $c_Lreversi_models_Player.prototype;
-$c_Lreversi_models_Player.prototype.opposite__Lreversi_models_Player = (function() {
-  var x = $m_Lreversi_models_Player$Black$();
-  if ((x === this)) {
-    return $m_Lreversi_models_Player$White$()
-  } else {
-    var x$3 = $m_Lreversi_models_Player$White$();
-    if ((x$3 === this)) {
-      return $m_Lreversi_models_Player$Black$()
-    } else {
-      throw new $c_s_MatchError().init___O(this)
-    }
-  }
-});
-$c_Lreversi_models_Player.prototype.init___Lreversi_models_Color = (function(color) {
-  this.color$1 = color;
-  return this
-});
-/** @constructor */
-var $c_Lreversi_service_ReversiCalculatorService$ = (function() {
+var $c_Lmyreversi_service_ReversiCalculatorService$ = (function() {
   $c_O.call(this);
   this.vectors$1 = null
 });
-$c_Lreversi_service_ReversiCalculatorService$.prototype = new $h_O();
-$c_Lreversi_service_ReversiCalculatorService$.prototype.constructor = $c_Lreversi_service_ReversiCalculatorService$;
+$c_Lmyreversi_service_ReversiCalculatorService$.prototype = new $h_O();
+$c_Lmyreversi_service_ReversiCalculatorService$.prototype.constructor = $c_Lmyreversi_service_ReversiCalculatorService$;
 /** @constructor */
-var $h_Lreversi_service_ReversiCalculatorService$ = (function() {
+var $h_Lmyreversi_service_ReversiCalculatorService$ = (function() {
   /*<skip>*/
 });
-$h_Lreversi_service_ReversiCalculatorService$.prototype = $c_Lreversi_service_ReversiCalculatorService$.prototype;
-$c_Lreversi_service_ReversiCalculatorService$.prototype.init___ = (function() {
-  $n_Lreversi_service_ReversiCalculatorService$ = this;
-  this.vectors$1 = $as_sc_Seq($m_sc_Seq$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lreversi_models_Vector().init___I__I((-1), (-1)), new $c_Lreversi_models_Vector().init___I__I((-1), 0), new $c_Lreversi_models_Vector().init___I__I((-1), 1), new $c_Lreversi_models_Vector().init___I__I(0, (-1)), new $c_Lreversi_models_Vector().init___I__I(0, 0), new $c_Lreversi_models_Vector().init___I__I(0, 1), new $c_Lreversi_models_Vector().init___I__I(1, (-1)), new $c_Lreversi_models_Vector().init___I__I(1, 0), new $c_Lreversi_models_Vector().init___I__I(1, 1)])));
+$h_Lmyreversi_service_ReversiCalculatorService$.prototype = $c_Lmyreversi_service_ReversiCalculatorService$.prototype;
+$c_Lmyreversi_service_ReversiCalculatorService$.prototype.init___ = (function() {
+  $n_Lmyreversi_service_ReversiCalculatorService$ = this;
+  this.vectors$1 = $as_sc_Seq($m_sc_Seq$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lmyreversi_models_shared_Vector().init___I__I((-1), (-1)), new $c_Lmyreversi_models_shared_Vector().init___I__I((-1), 0), new $c_Lmyreversi_models_shared_Vector().init___I__I((-1), 1), new $c_Lmyreversi_models_shared_Vector().init___I__I(0, (-1)), new $c_Lmyreversi_models_shared_Vector().init___I__I(0, 0), new $c_Lmyreversi_models_shared_Vector().init___I__I(0, 1), new $c_Lmyreversi_models_shared_Vector().init___I__I(1, (-1)), new $c_Lmyreversi_models_shared_Vector().init___I__I(1, 0), new $c_Lmyreversi_models_shared_Vector().init___I__I(1, 1)])));
   return this
 });
-$c_Lreversi_service_ReversiCalculatorService$.prototype.searchCandidate__Lreversi_models_Color__Lreversi_models_CellCollection__sc_Seq = (function(color, currentCellCollection) {
+$c_Lmyreversi_service_ReversiCalculatorService$.prototype.searchCandidate__Lmyreversi_models_shared_Color__Lmyreversi_models_reversi_CellCollection__sc_Seq = (function(color, currentCellCollection) {
   $m_sci_List$();
   var z = $m_sci_Nil$();
   var elem$1 = null;
@@ -1180,11 +1180,11 @@ $c_Lreversi_service_ReversiCalculatorService$.prototype.searchCandidate__Lrevers
     var arg1 = this$3.next__O();
     var arg1$1 = elem$1;
     var acc = $as_sci_List(arg1$1);
-    var cell = $as_Lreversi_models_Cell(arg1);
+    var cell = $as_Lmyreversi_models_reversi_Cell(arg1);
     if (cell.reversi$1.isDefined__Z()) {
       elem$1 = acc
     } else {
-      var reversiblePoints = $m_Lreversi_service_ReversiCalculatorService$().reversi$service$ReversiCalculatorService$$searchReversiblePoints__Lreversi_models_Color__Lreversi_models_Point__Lreversi_models_CellCollection__sc_Seq(color, cell.point$1, currentCellCollection);
+      var reversiblePoints = $m_Lmyreversi_service_ReversiCalculatorService$().myreversi$service$ReversiCalculatorService$$searchReversiblePoints__Lmyreversi_models_shared_Color__Lmyreversi_models_shared_Point__Lmyreversi_models_reversi_CellCollection__sc_Seq(color, cell.point$1, currentCellCollection);
       if (reversiblePoints.isEmpty__Z()) {
         elem$1 = acc
       } else {
@@ -1195,57 +1195,50 @@ $c_Lreversi_service_ReversiCalculatorService$.prototype.searchCandidate__Lrevers
   };
   return $as_sci_Seq(elem$1).toSeq__sci_Seq()
 });
-$c_Lreversi_service_ReversiCalculatorService$.prototype.addReversi__Lreversi_models_Reversi__Lreversi_models_Point__Lreversi_models_CellCollection__s_util_Try = (function(reversi, point, cellCollection) {
-  var cell = $s_Lreversi_models_CellCollection$class__find__Lreversi_models_CellCollection__Lreversi_models_Point__s_Option(cellCollection, point);
+$c_Lmyreversi_service_ReversiCalculatorService$.prototype.myreversi$service$ReversiCalculatorService$$searchReversiblePointsWithVector__Lmyreversi_models_shared_Vector__Lmyreversi_models_shared_Color__Lmyreversi_models_shared_Point__Lmyreversi_models_reversi_CellCollection__sc_Seq = (function(vector, color, point, collection) {
+  var this$2 = this.go$1__p1__sci_List__Lmyreversi_models_shared_Point__Lmyreversi_models_shared_Vector__Lmyreversi_models_shared_Color__Lmyreversi_models_reversi_CellCollection__sci_List(($m_sci_List$(), $m_sci_Nil$()), point, vector, color, collection);
+  return this$2
+});
+$c_Lmyreversi_service_ReversiCalculatorService$.prototype.addReversi__Lmyreversi_models_reversi_Reversi__Lmyreversi_models_shared_Point__Lmyreversi_models_reversi_CellCollection__s_util_Try = (function(reversi, point, cellCollection) {
+  var cell = $s_Lmyreversi_models_reversi_CellCollection$class__find__Lmyreversi_models_reversi_CellCollection__Lmyreversi_models_shared_Point__s_Option(cellCollection, point);
   var jsx$2 = $m_s_Predef$();
   if (cell.isDefined__Z()) {
-    var this$1 = $as_Lreversi_models_Cell(cell.get__O());
+    var this$1 = $as_Lmyreversi_models_reversi_Cell(cell.get__O());
     var jsx$1 = (!this$1.reversi$1.isDefined__Z())
   } else {
     var jsx$1 = false
   };
   jsx$2.require__Z__V(jsx$1);
-  var points = this.reversi$service$ReversiCalculatorService$$searchReversiblePoints__Lreversi_models_Color__Lreversi_models_Point__Lreversi_models_CellCollection__sc_Seq(reversi.color$1, point, cellCollection);
+  var points = this.myreversi$service$ReversiCalculatorService$$searchReversiblePoints__Lmyreversi_models_shared_Color__Lmyreversi_models_shared_Point__Lmyreversi_models_reversi_CellCollection__sc_Seq(reversi.color$1, point, cellCollection);
   if (points.isEmpty__Z()) {
-    return new $c_s_util_Failure().init___jl_Throwable(new $c_Lreversi_service_exception_NotFoundReversibleReversiException().init___())
+    return new $c_s_util_Failure().init___jl_Throwable(new $c_Lmyreversi_service_exception_NotFoundReversibleReversiException().init___())
   } else {
-    var cell$1 = new $c_Lreversi_models_Cell().init___Lreversi_models_Point__s_Option(point, new $c_s_Some().init___O(reversi));
-    var newCollection = $s_Lreversi_models_CellCollection$class__replaceCell__Lreversi_models_CellCollection__Lreversi_models_Cell__Lreversi_models_CellCollection(cellCollection, cell$1);
+    var cell$1 = new $c_Lmyreversi_models_reversi_Cell().init___Lmyreversi_models_shared_Point__s_Option(point, new $c_s_Some().init___O(reversi));
+    var newCollection = $s_Lmyreversi_models_reversi_CellCollection$class__replaceCell__Lmyreversi_models_reversi_CellCollection__Lmyreversi_models_reversi_Cell__Lmyreversi_models_reversi_CellCollection(cellCollection, cell$1);
     var this$2 = $m_sc_Seq$();
     var bf = this$2.ReusableCBFInstance$2;
     var b = $s_sc_TraversableLike$class__builder$1__p0__sc_TraversableLike__scg_CanBuildFrom__scm_Builder(newCollection, bf);
     var this$3 = newCollection.iterator__sc_Iterator();
     while (this$3.hasNext__Z()) {
       var arg1 = this$3.next__O();
-      var x0$2 = $as_Lreversi_models_Cell(arg1);
-      b.$$plus$eq__O__scm_Builder((points.contains__O__Z(x0$2.point$1) ? x0$2.toggleReversi__Lreversi_models_Cell() : x0$2))
+      var x0$2 = $as_Lmyreversi_models_reversi_Cell(arg1);
+      b.$$plus$eq__O__scm_Builder((points.contains__O__Z(x0$2.point$1) ? x0$2.toggleReversi__Lmyreversi_models_reversi_Cell() : x0$2))
     };
     var cells = $as_sc_Seq(b.result__O());
-    return new $c_s_util_Success().init___O(new $c_Lreversi_models_CellCollection$$anon$1().init___sc_Seq(cells))
+    return new $c_s_util_Success().init___O(new $c_Lmyreversi_models_reversi_CellCollection$$anon$1().init___sc_Seq(cells))
   }
 });
-$c_Lreversi_service_ReversiCalculatorService$.prototype.reversi$service$ReversiCalculatorService$$searchReversiblePoints__Lreversi_models_Color__Lreversi_models_Point__Lreversi_models_CellCollection__sc_Seq = (function(color, point, collection) {
-  var jsx$2 = this.vectors$1;
-  var jsx$1 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(color$2, point$1, collection$1) {
-    return (function(v$2) {
-      var v = $as_Lreversi_models_Vector(v$2);
-      return $m_Lreversi_service_ReversiCalculatorService$().reversi$service$ReversiCalculatorService$$searchReversiblePointsWithVector__Lreversi_models_Vector__Lreversi_models_Color__Lreversi_models_Point__Lreversi_models_CellCollection__sc_Seq(v, color$2, point$1, collection$1)
-    })
-  })(color, point, collection));
-  var this$1 = $m_sc_Seq$();
-  return $as_sc_Seq(jsx$2.flatMap__F1__scg_CanBuildFrom__O(jsx$1, this$1.ReusableCBFInstance$2))
-});
-$c_Lreversi_service_ReversiCalculatorService$.prototype.go$1__p1__sci_List__Lreversi_models_Point__Lreversi_models_Vector__Lreversi_models_Color__Lreversi_models_CellCollection__sci_List = (function(acc, point, vector$1, color$3, collection$2) {
+$c_Lmyreversi_service_ReversiCalculatorService$.prototype.go$1__p1__sci_List__Lmyreversi_models_shared_Point__Lmyreversi_models_shared_Vector__Lmyreversi_models_shared_Color__Lmyreversi_models_reversi_CellCollection__sci_List = (function(acc, point, vector$1, color$3, collection$2) {
   _go: while (true) {
-    var newPoint = point.move__Lreversi_models_Vector__Lreversi_models_Point(vector$1);
-    var x1 = $s_Lreversi_models_CellCollection$class__find__Lreversi_models_CellCollection__Lreversi_models_Point__s_Option(collection$2, newPoint);
+    var newPoint = point.move__Lmyreversi_models_shared_Vector__Lmyreversi_models_shared_Point(vector$1);
+    var x1 = $s_Lmyreversi_models_reversi_CellCollection$class__find__Lmyreversi_models_reversi_CellCollection__Lmyreversi_models_shared_Point__s_Option(collection$2, newPoint);
     var x$2 = $m_s_None$();
     if ((x$2 === x1)) {
       $m_sci_List$();
       return $m_sci_Nil$()
     } else if ($is_s_Some(x1)) {
       var x2 = $as_s_Some(x1);
-      var cell = $as_Lreversi_models_Cell(x2.x$2);
+      var cell = $as_Lmyreversi_models_reversi_Cell(x2.x$2);
       var x1$2 = cell.reversi$1;
       var x$4 = $m_s_None$();
       if ((x$4 === x1$2)) {
@@ -1254,7 +1247,7 @@ $c_Lreversi_service_ReversiCalculatorService$.prototype.go$1__p1__sci_List__Lrev
       };
       if ($is_s_Some(x1$2)) {
         var x2$2 = $as_s_Some(x1$2);
-        var p3 = $as_Lreversi_models_Reversi(x2$2.x$2);
+        var p3 = $as_Lmyreversi_models_reversi_Reversi(x2$2.x$2);
         if ((p3 !== null)) {
           var c = p3.color$1;
           if ((color$3 === c)) {
@@ -1273,23 +1266,30 @@ $c_Lreversi_service_ReversiCalculatorService$.prototype.go$1__p1__sci_List__Lrev
     }
   }
 });
-$c_Lreversi_service_ReversiCalculatorService$.prototype.reversi$service$ReversiCalculatorService$$searchReversiblePointsWithVector__Lreversi_models_Vector__Lreversi_models_Color__Lreversi_models_Point__Lreversi_models_CellCollection__sc_Seq = (function(vector, color, point, collection) {
-  var this$2 = this.go$1__p1__sci_List__Lreversi_models_Point__Lreversi_models_Vector__Lreversi_models_Color__Lreversi_models_CellCollection__sci_List(($m_sci_List$(), $m_sci_Nil$()), point, vector, color, collection);
-  return this$2
+$c_Lmyreversi_service_ReversiCalculatorService$.prototype.myreversi$service$ReversiCalculatorService$$searchReversiblePoints__Lmyreversi_models_shared_Color__Lmyreversi_models_shared_Point__Lmyreversi_models_reversi_CellCollection__sc_Seq = (function(color, point, collection) {
+  var jsx$2 = this.vectors$1;
+  var jsx$1 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(color$2, point$1, collection$1) {
+    return (function(v$2) {
+      var v = $as_Lmyreversi_models_shared_Vector(v$2);
+      return $m_Lmyreversi_service_ReversiCalculatorService$().myreversi$service$ReversiCalculatorService$$searchReversiblePointsWithVector__Lmyreversi_models_shared_Vector__Lmyreversi_models_shared_Color__Lmyreversi_models_shared_Point__Lmyreversi_models_reversi_CellCollection__sc_Seq(v, color$2, point$1, collection$1)
+    })
+  })(color, point, collection));
+  var this$1 = $m_sc_Seq$();
+  return $as_sc_Seq(jsx$2.flatMap__F1__scg_CanBuildFrom__O(jsx$1, this$1.ReusableCBFInstance$2))
 });
-var $d_Lreversi_service_ReversiCalculatorService$ = new $TypeData().initClass({
-  Lreversi_service_ReversiCalculatorService$: 0
-}, false, "reversi.service.ReversiCalculatorService$", {
-  Lreversi_service_ReversiCalculatorService$: 1,
+var $d_Lmyreversi_service_ReversiCalculatorService$ = new $TypeData().initClass({
+  Lmyreversi_service_ReversiCalculatorService$: 0
+}, false, "myreversi.service.ReversiCalculatorService$", {
+  Lmyreversi_service_ReversiCalculatorService$: 1,
   O: 1
 });
-$c_Lreversi_service_ReversiCalculatorService$.prototype.$classData = $d_Lreversi_service_ReversiCalculatorService$;
-var $n_Lreversi_service_ReversiCalculatorService$ = (void 0);
-var $m_Lreversi_service_ReversiCalculatorService$ = (function() {
-  if ((!$n_Lreversi_service_ReversiCalculatorService$)) {
-    $n_Lreversi_service_ReversiCalculatorService$ = new $c_Lreversi_service_ReversiCalculatorService$().init___()
+$c_Lmyreversi_service_ReversiCalculatorService$.prototype.$classData = $d_Lmyreversi_service_ReversiCalculatorService$;
+var $n_Lmyreversi_service_ReversiCalculatorService$ = (void 0);
+var $m_Lmyreversi_service_ReversiCalculatorService$ = (function() {
+  if ((!$n_Lmyreversi_service_ReversiCalculatorService$)) {
+    $n_Lmyreversi_service_ReversiCalculatorService$ = new $c_Lmyreversi_service_ReversiCalculatorService$().init___()
   };
-  return $n_Lreversi_service_ReversiCalculatorService$
+  return $n_Lmyreversi_service_ReversiCalculatorService$
 });
 /** @constructor */
 var $c_jl_Character$ = (function() {
@@ -4373,51 +4373,51 @@ var $m_sr_Statics$ = (function() {
   return $n_sr_Statics$
 });
 /** @constructor */
-var $c_Lreversi_ReversiApp$ = (function() {
+var $c_Lmyreversi_ReversiApp$ = (function() {
   $c_O.call(this);
   this.Edge$1 = 0
 });
-$c_Lreversi_ReversiApp$.prototype = new $h_O();
-$c_Lreversi_ReversiApp$.prototype.constructor = $c_Lreversi_ReversiApp$;
+$c_Lmyreversi_ReversiApp$.prototype = new $h_O();
+$c_Lmyreversi_ReversiApp$.prototype.constructor = $c_Lmyreversi_ReversiApp$;
 /** @constructor */
-var $h_Lreversi_ReversiApp$ = (function() {
+var $h_Lmyreversi_ReversiApp$ = (function() {
   /*<skip>*/
 });
-$h_Lreversi_ReversiApp$.prototype = $c_Lreversi_ReversiApp$.prototype;
-$c_Lreversi_ReversiApp$.prototype.init___ = (function() {
-  $n_Lreversi_ReversiApp$ = this;
+$h_Lmyreversi_ReversiApp$.prototype = $c_Lmyreversi_ReversiApp$.prototype;
+$c_Lmyreversi_ReversiApp$.prototype.init___ = (function() {
+  $n_Lmyreversi_ReversiApp$ = this;
   this.Edge$1 = 8;
   return this
 });
-$c_Lreversi_ReversiApp$.prototype.main__V = (function() {
-  this.refresh__Lreversi_models_Board__V($m_Lreversi_models_Board$().initialize__I__Lreversi_models_Player__Lreversi_models_Board(this.Edge$1, $m_Lreversi_models_Player$Black$()))
+$c_Lmyreversi_ReversiApp$.prototype.main__V = (function() {
+  this.refresh__Lmyreversi_models_reversi_Board__V($m_Lmyreversi_models_reversi_Board$().initialize__I__Lmyreversi_models_player_Player__Lmyreversi_models_reversi_Board(this.Edge$1, $m_Lmyreversi_models_player_Player$Black$()))
 });
-$c_Lreversi_ReversiApp$.prototype.$$js$exported$meth$main__O = (function() {
+$c_Lmyreversi_ReversiApp$.prototype.refresh__Lmyreversi_models_reversi_Board__V = (function(board) {
+  (0, $g["jQuery"])("#main")["empty"]()["append"](new $c_Lmyreversi_views_BoardView().init___Lmyreversi_models_reversi_Board(board).render__Lorg_scalajs_jquery_JQuery())
+});
+$c_Lmyreversi_ReversiApp$.prototype.$$js$exported$meth$main__O = (function() {
   this.main__V()
 });
-$c_Lreversi_ReversiApp$.prototype.refresh__Lreversi_models_Board__V = (function(board) {
-  (0, $g["jQuery"])("#main")["empty"]()["append"](new $c_Lreversi_views_BoardView().init___Lreversi_models_Board(board).render__Lorg_scalajs_jquery_JQuery())
-});
-$c_Lreversi_ReversiApp$.prototype["main"] = (function() {
+$c_Lmyreversi_ReversiApp$.prototype["main"] = (function() {
   return this.$$js$exported$meth$main__O()
 });
-var $d_Lreversi_ReversiApp$ = new $TypeData().initClass({
-  Lreversi_ReversiApp$: 0
-}, false, "reversi.ReversiApp$", {
-  Lreversi_ReversiApp$: 1,
+var $d_Lmyreversi_ReversiApp$ = new $TypeData().initClass({
+  Lmyreversi_ReversiApp$: 0
+}, false, "myreversi.ReversiApp$", {
+  Lmyreversi_ReversiApp$: 1,
   O: 1,
   sjs_js_JSApp: 1
 });
-$c_Lreversi_ReversiApp$.prototype.$classData = $d_Lreversi_ReversiApp$;
-var $n_Lreversi_ReversiApp$ = (void 0);
-var $m_Lreversi_ReversiApp$ = (function() {
-  if ((!$n_Lreversi_ReversiApp$)) {
-    $n_Lreversi_ReversiApp$ = new $c_Lreversi_ReversiApp$().init___()
+$c_Lmyreversi_ReversiApp$.prototype.$classData = $d_Lmyreversi_ReversiApp$;
+var $n_Lmyreversi_ReversiApp$ = (void 0);
+var $m_Lmyreversi_ReversiApp$ = (function() {
+  if ((!$n_Lmyreversi_ReversiApp$)) {
+    $n_Lmyreversi_ReversiApp$ = new $c_Lmyreversi_ReversiApp$().init___()
   };
-  return $n_Lreversi_ReversiApp$
+  return $n_Lmyreversi_ReversiApp$
 });
-$e["reversi"] = ($e["reversi"] || {});
-$e["reversi"]["ReversiApp"] = $m_Lreversi_ReversiApp$;
+$e["myreversi"] = ($e["myreversi"] || {});
+$e["myreversi"]["ReversiApp"] = $m_Lmyreversi_ReversiApp$;
 var $isArrayOf_jl_Boolean = (function(obj, depth) {
   return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.jl_Boolean)))
 });
@@ -4996,17 +4996,39 @@ $c_Ljava_io_OutputStream.prototype.close__V = (function() {
   /*<skip>*/
 });
 /** @constructor */
-var $c_Lreversi_models_Board$ = (function() {
+var $c_Lmyreversi_models_reversi_Board$ = (function() {
   $c_O.call(this)
 });
-$c_Lreversi_models_Board$.prototype = new $h_O();
-$c_Lreversi_models_Board$.prototype.constructor = $c_Lreversi_models_Board$;
+$c_Lmyreversi_models_reversi_Board$.prototype = new $h_O();
+$c_Lmyreversi_models_reversi_Board$.prototype.constructor = $c_Lmyreversi_models_reversi_Board$;
 /** @constructor */
-var $h_Lreversi_models_Board$ = (function() {
+var $h_Lmyreversi_models_reversi_Board$ = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_Board$.prototype = $c_Lreversi_models_Board$.prototype;
-$c_Lreversi_models_Board$.prototype.createEmptyBoard__I__Lreversi_models_Player__Lreversi_models_Board = (function(edge, currentPlayer) {
+$h_Lmyreversi_models_reversi_Board$.prototype = $c_Lmyreversi_models_reversi_Board$.prototype;
+$c_Lmyreversi_models_reversi_Board$.prototype.initialize__I__Lmyreversi_models_player_Player__Lmyreversi_models_reversi_Board = (function(edge, currentPlayer) {
+  var emptyBoard = this.createEmptyBoard__I__Lmyreversi_models_player_Player__Lmyreversi_models_reversi_Board(edge, currentPlayer);
+  var this$1 = this.initialReversiMapping__p1__I__sci_Map(edge);
+  var op = new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function(x0$2$2, x1$1$2) {
+    var x0$2 = $as_Lmyreversi_models_reversi_Board(x0$2$2);
+    var x1$1 = $as_T2(x1$1$2);
+    var x1 = new $c_T2().init___O__O(x0$2, x1$1);
+    var board = $as_Lmyreversi_models_reversi_Board(x1.$$und1$f);
+    var p2 = $as_T2(x1.$$und2$f);
+    if ((p2 !== null)) {
+      var p3 = $as_T2(p2.$$und1__O());
+      var reversi = $as_Lmyreversi_models_reversi_Reversi(p2.$$und2__O());
+      if ((p3 !== null)) {
+        var x = p3.$$und1$mcI$sp__I();
+        var y = p3.$$und2$mcI$sp__I();
+        return board.addReversi__I__I__Lmyreversi_models_reversi_Reversi__Lmyreversi_models_reversi_Board(x, y, reversi)
+      }
+    };
+    throw new $c_s_MatchError().init___O(x1)
+  }));
+  return $as_Lmyreversi_models_reversi_Board($s_sc_TraversableOnce$class__foldLeft__sc_TraversableOnce__O__F2__O(this$1, emptyBoard, op))
+});
+$c_Lmyreversi_models_reversi_Board$.prototype.createEmptyBoard__I__Lmyreversi_models_player_Player__Lmyreversi_models_reversi_Board = (function(edge, currentPlayer) {
   var this$4 = new $c_sci_Range$Inclusive().init___I__I__I(1, edge, 1);
   var this$5 = $m_sci_List$();
   var cbf = this$5.ReusableCBFInstance$2;
@@ -5034,7 +5056,7 @@ $c_Lreversi_models_Board$.prototype.createEmptyBoard__I__Lreversi_models_Player_
         var f = (function(x$5) {
           return (function(y$2) {
             var y = $uI(y$2);
-            return new $c_Lreversi_models_Cell().init___Lreversi_models_Point__s_Option($m_Lreversi_models_Point$().at__I__I__Lreversi_models_Point(x$5, y), $m_s_None$())
+            return new $c_Lmyreversi_models_reversi_Cell().init___Lmyreversi_models_shared_Point__s_Option($m_Lmyreversi_models_shared_Point$().at__I__I__Lmyreversi_models_shared_Point(x$5, y), $m_s_None$())
           })
         })(x);
         var this$16 = $m_sci_List$();
@@ -5103,7 +5125,7 @@ $c_Lreversi_models_Board$.prototype.createEmptyBoard__I__Lreversi_models_Player_
       var f$1 = (function(x$5$1) {
         return (function(y$2$1) {
           var y$1 = $uI(y$2$1);
-          return new $c_Lreversi_models_Cell().init___Lreversi_models_Point__s_Option($m_Lreversi_models_Point$().at__I__I__Lreversi_models_Point(x$5$1, y$1), $m_s_None$())
+          return new $c_Lmyreversi_models_reversi_Cell().init___Lmyreversi_models_shared_Point__s_Option($m_Lmyreversi_models_shared_Point$().at__I__I__Lmyreversi_models_shared_Point(x$5$1, y$1), $m_s_None$())
         })
       })(x$1);
       var this$30 = $m_sci_List$();
@@ -5145,43 +5167,21 @@ $c_Lreversi_models_Board$.prototype.createEmptyBoard__I__Lreversi_models_Player_
     var jsx$1 = b$1.toList__sci_List()
   };
   var cells = $as_sci_Seq(jsx$1).toSeq__sci_Seq();
-  return new $c_Lreversi_models_Board().init___I__Lreversi_models_CellCollection__Lreversi_models_Player(edge, new $c_Lreversi_models_CellCollection$$anon$1().init___sc_Seq(cells), currentPlayer)
+  return new $c_Lmyreversi_models_reversi_Board().init___I__Lmyreversi_models_reversi_CellCollection__Lmyreversi_models_player_Player(edge, new $c_Lmyreversi_models_reversi_CellCollection$$anon$1().init___sc_Seq(cells), currentPlayer)
 });
-$c_Lreversi_models_Board$.prototype.initialize__I__Lreversi_models_Player__Lreversi_models_Board = (function(edge, currentPlayer) {
-  var emptyBoard = this.createEmptyBoard__I__Lreversi_models_Player__Lreversi_models_Board(edge, currentPlayer);
-  var this$1 = this.initialReversiMapping__p1__I__sci_Map(edge);
-  var op = new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function(x0$2$2, x1$1$2) {
-    var x0$2 = $as_Lreversi_models_Board(x0$2$2);
-    var x1$1 = $as_T2(x1$1$2);
-    var x1 = new $c_T2().init___O__O(x0$2, x1$1);
-    var board = $as_Lreversi_models_Board(x1.$$und1$f);
-    var p2 = $as_T2(x1.$$und2$f);
-    if ((p2 !== null)) {
-      var p3 = $as_T2(p2.$$und1__O());
-      var reversi = $as_Lreversi_models_Reversi(p2.$$und2__O());
-      if ((p3 !== null)) {
-        var x = p3.$$und1$mcI$sp__I();
-        var y = p3.$$und2$mcI$sp__I();
-        return board.addReversi__I__I__Lreversi_models_Reversi__Lreversi_models_Board(x, y, reversi)
-      }
-    };
-    throw new $c_s_MatchError().init___O(x1)
-  }));
-  return $as_Lreversi_models_Board($s_sc_TraversableOnce$class__foldLeft__sc_TraversableOnce__O__F2__O(this$1, emptyBoard, op))
-});
-$c_Lreversi_models_Board$.prototype.initialReversiMapping__p1__I__sci_Map = (function(edge) {
+$c_Lmyreversi_models_reversi_Board$.prototype.initialReversiMapping__p1__I__sci_Map = (function(edge) {
   var middle = ((edge / 2) | 0);
   var $$this = new $c_s_Tuple2$mcII$sp().init___I__I(middle, middle);
-  var y = new $c_Lreversi_models_Reversi().init___Lreversi_models_Color($m_Lreversi_models_Color$Black$());
+  var y = new $c_Lmyreversi_models_reversi_Reversi().init___Lmyreversi_models_shared_Color($m_Lmyreversi_models_shared_Color$Black$());
   var jsx$3 = new $c_T2().init___O__O($$this, y);
   var $$this$1 = new $c_s_Tuple2$mcII$sp().init___I__I(((1 + middle) | 0), middle);
-  var y$1 = new $c_Lreversi_models_Reversi().init___Lreversi_models_Color($m_Lreversi_models_Color$White$());
+  var y$1 = new $c_Lmyreversi_models_reversi_Reversi().init___Lmyreversi_models_shared_Color($m_Lmyreversi_models_shared_Color$White$());
   var jsx$2 = new $c_T2().init___O__O($$this$1, y$1);
   var $$this$2 = new $c_s_Tuple2$mcII$sp().init___I__I(middle, ((1 + middle) | 0));
-  var y$2 = new $c_Lreversi_models_Reversi().init___Lreversi_models_Color($m_Lreversi_models_Color$White$());
+  var y$2 = new $c_Lmyreversi_models_reversi_Reversi().init___Lmyreversi_models_shared_Color($m_Lmyreversi_models_shared_Color$White$());
   var jsx$1 = new $c_T2().init___O__O($$this$2, y$2);
   var $$this$3 = new $c_s_Tuple2$mcII$sp().init___I__I(((1 + middle) | 0), ((1 + middle) | 0));
-  var y$3 = new $c_Lreversi_models_Reversi().init___Lreversi_models_Color($m_Lreversi_models_Color$Black$());
+  var y$3 = new $c_Lmyreversi_models_reversi_Reversi().init___Lmyreversi_models_shared_Color($m_Lmyreversi_models_shared_Color$Black$());
   var array = [jsx$3, jsx$2, jsx$1, new $c_T2().init___O__O($$this$3, y$3)];
   var this$10 = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
   var i = 0;
@@ -5194,53 +5194,53 @@ $c_Lreversi_models_Board$.prototype.initialReversiMapping__p1__I__sci_Map = (fun
   };
   return $as_sci_Map(this$10.elems$1)
 });
-var $d_Lreversi_models_Board$ = new $TypeData().initClass({
-  Lreversi_models_Board$: 0
-}, false, "reversi.models.Board$", {
-  Lreversi_models_Board$: 1,
+var $d_Lmyreversi_models_reversi_Board$ = new $TypeData().initClass({
+  Lmyreversi_models_reversi_Board$: 0
+}, false, "myreversi.models.reversi.Board$", {
+  Lmyreversi_models_reversi_Board$: 1,
   O: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_models_Board$.prototype.$classData = $d_Lreversi_models_Board$;
-var $n_Lreversi_models_Board$ = (void 0);
-var $m_Lreversi_models_Board$ = (function() {
-  if ((!$n_Lreversi_models_Board$)) {
-    $n_Lreversi_models_Board$ = new $c_Lreversi_models_Board$().init___()
+$c_Lmyreversi_models_reversi_Board$.prototype.$classData = $d_Lmyreversi_models_reversi_Board$;
+var $n_Lmyreversi_models_reversi_Board$ = (void 0);
+var $m_Lmyreversi_models_reversi_Board$ = (function() {
+  if ((!$n_Lmyreversi_models_reversi_Board$)) {
+    $n_Lmyreversi_models_reversi_Board$ = new $c_Lmyreversi_models_reversi_Board$().init___()
   };
-  return $n_Lreversi_models_Board$
+  return $n_Lmyreversi_models_reversi_Board$
 });
 /** @constructor */
-var $c_Lreversi_models_Point$ = (function() {
+var $c_Lmyreversi_models_shared_Point$ = (function() {
   $c_O.call(this)
 });
-$c_Lreversi_models_Point$.prototype = new $h_O();
-$c_Lreversi_models_Point$.prototype.constructor = $c_Lreversi_models_Point$;
+$c_Lmyreversi_models_shared_Point$.prototype = new $h_O();
+$c_Lmyreversi_models_shared_Point$.prototype.constructor = $c_Lmyreversi_models_shared_Point$;
 /** @constructor */
-var $h_Lreversi_models_Point$ = (function() {
+var $h_Lmyreversi_models_shared_Point$ = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_Point$.prototype = $c_Lreversi_models_Point$.prototype;
-$c_Lreversi_models_Point$.prototype.at__I__I__Lreversi_models_Point = (function(x, y) {
+$h_Lmyreversi_models_shared_Point$.prototype = $c_Lmyreversi_models_shared_Point$.prototype;
+$c_Lmyreversi_models_shared_Point$.prototype.at__I__I__Lmyreversi_models_shared_Point = (function(x, y) {
   $m_s_Predef$().require__Z__V((x >= 1));
   $m_s_Predef$().require__Z__V((y >= 1));
-  return new $c_Lreversi_models_Point().init___I__I(x, y)
+  return new $c_Lmyreversi_models_shared_Point().init___I__I(x, y)
 });
-var $d_Lreversi_models_Point$ = new $TypeData().initClass({
-  Lreversi_models_Point$: 0
-}, false, "reversi.models.Point$", {
-  Lreversi_models_Point$: 1,
+var $d_Lmyreversi_models_shared_Point$ = new $TypeData().initClass({
+  Lmyreversi_models_shared_Point$: 0
+}, false, "myreversi.models.shared.Point$", {
+  Lmyreversi_models_shared_Point$: 1,
   O: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_models_Point$.prototype.$classData = $d_Lreversi_models_Point$;
-var $n_Lreversi_models_Point$ = (void 0);
-var $m_Lreversi_models_Point$ = (function() {
-  if ((!$n_Lreversi_models_Point$)) {
-    $n_Lreversi_models_Point$ = new $c_Lreversi_models_Point$().init___()
+$c_Lmyreversi_models_shared_Point$.prototype.$classData = $d_Lmyreversi_models_shared_Point$;
+var $n_Lmyreversi_models_shared_Point$ = (void 0);
+var $m_Lmyreversi_models_shared_Point$ = (function() {
+  if ((!$n_Lmyreversi_models_shared_Point$)) {
+    $n_Lmyreversi_models_shared_Point$ = new $c_Lmyreversi_models_shared_Point$().init___()
   };
-  return $n_Lreversi_models_Point$
+  return $n_Lmyreversi_models_shared_Point$
 });
 var $d_jl_Byte = new $TypeData().initClass({
   jl_Byte: 0
@@ -7900,66 +7900,41 @@ var $d_scm_SetBuilder = new $TypeData().initClass({
 });
 $c_scm_SetBuilder.prototype.$classData = $d_scm_SetBuilder;
 /** @constructor */
-var $c_Lreversi_exception_ReversiException = (function() {
+var $c_Lmyreversi_exception_ReversiException = (function() {
   $c_jl_RuntimeException.call(this)
 });
-$c_Lreversi_exception_ReversiException.prototype = new $h_jl_RuntimeException();
-$c_Lreversi_exception_ReversiException.prototype.constructor = $c_Lreversi_exception_ReversiException;
+$c_Lmyreversi_exception_ReversiException.prototype = new $h_jl_RuntimeException();
+$c_Lmyreversi_exception_ReversiException.prototype.constructor = $c_Lmyreversi_exception_ReversiException;
 /** @constructor */
-var $h_Lreversi_exception_ReversiException = (function() {
+var $h_Lmyreversi_exception_ReversiException = (function() {
   /*<skip>*/
 });
-$h_Lreversi_exception_ReversiException.prototype = $c_Lreversi_exception_ReversiException.prototype;
+$h_Lmyreversi_exception_ReversiException.prototype = $c_Lmyreversi_exception_ReversiException.prototype;
 /** @constructor */
-var $c_Lreversi_models_Board = (function() {
+var $c_Lmyreversi_models_reversi_Board = (function() {
   $c_O.call(this);
   this.edge$1 = 0;
   this.cellCollection$1 = null;
   this.player$1 = null
 });
-$c_Lreversi_models_Board.prototype = new $h_O();
-$c_Lreversi_models_Board.prototype.constructor = $c_Lreversi_models_Board;
+$c_Lmyreversi_models_reversi_Board.prototype = new $h_O();
+$c_Lmyreversi_models_reversi_Board.prototype.constructor = $c_Lmyreversi_models_reversi_Board;
 /** @constructor */
-var $h_Lreversi_models_Board = (function() {
+var $h_Lmyreversi_models_reversi_Board = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_Board.prototype = $c_Lreversi_models_Board.prototype;
-$c_Lreversi_models_Board.prototype.productPrefix__T = (function() {
+$h_Lmyreversi_models_reversi_Board.prototype = $c_Lmyreversi_models_reversi_Board.prototype;
+$c_Lmyreversi_models_reversi_Board.prototype.productPrefix__T = (function() {
   return "Board"
 });
-$c_Lreversi_models_Board.prototype.productArity__I = (function() {
+$c_Lmyreversi_models_reversi_Board.prototype.productArity__I = (function() {
   return 3
 });
-$c_Lreversi_models_Board.prototype.init___I__Lreversi_models_CellCollection__Lreversi_models_Player = (function(edge, cellCollection, player) {
-  this.edge$1 = edge;
-  this.cellCollection$1 = cellCollection;
-  this.player$1 = player;
-  $m_s_Predef$().require__Z__V(((edge >= 4) && ((edge % 2) === 0)));
-  $m_s_Predef$().require__Z__V((cellCollection.length__I() === $imul(edge, edge)));
-  return this
-});
-$c_Lreversi_models_Board.prototype.addReversi__I__I__Lreversi_models_Reversi__Lreversi_models_Board = (function(x, y, reversi) {
-  var this$2 = this.cellCollection$1;
-  var this$1 = $m_sc_Seq$();
-  var bf = this$1.ReusableCBFInstance$2;
-  var b = $s_sc_TraversableLike$class__builder$1__p0__sc_TraversableLike__scg_CanBuildFrom__scm_Builder(this$2, bf);
-  var this$3 = this$2.iterator__sc_Iterator();
-  while (this$3.hasNext__Z()) {
-    var arg1 = this$3.next__O();
-    var x0$1 = $as_Lreversi_models_Cell(arg1);
-    b.$$plus$eq__O__scm_Builder((((x0$1.point$1.x$1 === x) && (x0$1.point$1.y$1 === y)) ? new $c_Lreversi_models_Cell().init___Lreversi_models_Point__s_Option(new $c_Lreversi_models_Point().init___I__I(x, y), new $c_s_Some().init___O(reversi)) : x0$1))
-  };
-  var newCells = $as_sc_Seq(b.result__O());
-  var x$1 = new $c_Lreversi_models_CellCollection$$anon$1().init___sc_Seq(newCells);
-  var x$2 = this.edge$1;
-  var x$3 = this.player$1;
-  return new $c_Lreversi_models_Board().init___I__Lreversi_models_CellCollection__Lreversi_models_Player(x$2, x$1, x$3)
-});
-$c_Lreversi_models_Board.prototype.equals__O__Z = (function(x$1) {
+$c_Lmyreversi_models_reversi_Board.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lreversi_models_Board(x$1)) {
-    var Board$1 = $as_Lreversi_models_Board(x$1);
+  } else if ($is_Lmyreversi_models_reversi_Board(x$1)) {
+    var Board$1 = $as_Lmyreversi_models_reversi_Board(x$1);
     if ((this.edge$1 === Board$1.edge$1)) {
       var x = this.cellCollection$1;
       var x$2 = Board$1.cellCollection$1;
@@ -7978,7 +7953,24 @@ $c_Lreversi_models_Board.prototype.equals__O__Z = (function(x$1) {
     return false
   }
 });
-$c_Lreversi_models_Board.prototype.productElement__I__O = (function(x$1) {
+$c_Lmyreversi_models_reversi_Board.prototype.addReversi__I__I__Lmyreversi_models_reversi_Reversi__Lmyreversi_models_reversi_Board = (function(x, y, reversi) {
+  var this$2 = this.cellCollection$1;
+  var this$1 = $m_sc_Seq$();
+  var bf = this$1.ReusableCBFInstance$2;
+  var b = $s_sc_TraversableLike$class__builder$1__p0__sc_TraversableLike__scg_CanBuildFrom__scm_Builder(this$2, bf);
+  var this$3 = this$2.iterator__sc_Iterator();
+  while (this$3.hasNext__Z()) {
+    var arg1 = this$3.next__O();
+    var x0$1 = $as_Lmyreversi_models_reversi_Cell(arg1);
+    b.$$plus$eq__O__scm_Builder((((x0$1.point$1.x$1 === x) && (x0$1.point$1.y$1 === y)) ? new $c_Lmyreversi_models_reversi_Cell().init___Lmyreversi_models_shared_Point__s_Option(new $c_Lmyreversi_models_shared_Point().init___I__I(x, y), new $c_s_Some().init___O(reversi)) : x0$1))
+  };
+  var newCells = $as_sc_Seq(b.result__O());
+  var x$1 = new $c_Lmyreversi_models_reversi_CellCollection$$anon$1().init___sc_Seq(newCells);
+  var x$2 = this.edge$1;
+  var x$3 = this.player$1;
+  return new $c_Lmyreversi_models_reversi_Board().init___I__Lmyreversi_models_reversi_CellCollection__Lmyreversi_models_player_Player(x$2, x$1, x$3)
+});
+$c_Lmyreversi_models_reversi_Board.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.edge$1;
@@ -7997,71 +7989,74 @@ $c_Lreversi_models_Board.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lreversi_models_Board.prototype.toString__T = (function() {
+$c_Lmyreversi_models_reversi_Board.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lreversi_models_Board.prototype.hashCode__I = (function() {
+$c_Lmyreversi_models_reversi_Board.prototype.init___I__Lmyreversi_models_reversi_CellCollection__Lmyreversi_models_player_Player = (function(edge, cellCollection, player) {
+  this.edge$1 = edge;
+  this.cellCollection$1 = cellCollection;
+  this.player$1 = player;
+  $m_s_Predef$().require__Z__V(((edge >= 4) && ((edge % 2) === 0)));
+  $m_s_Predef$().require__Z__V((cellCollection.length__I() === $imul(edge, edge)));
+  return this
+});
+$c_Lmyreversi_models_reversi_Board.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   acc = $m_sr_Statics$().mix__I__I__I(acc, this.edge$1);
   acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.cellCollection$1));
   acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.player$1));
   return $m_sr_Statics$().finalizeHash__I__I__I(acc, 3)
 });
-$c_Lreversi_models_Board.prototype.productIterator__sc_Iterator = (function() {
+$c_Lmyreversi_models_reversi_Board.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $is_Lreversi_models_Board = (function(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lreversi_models_Board)))
+var $is_Lmyreversi_models_reversi_Board = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmyreversi_models_reversi_Board)))
 });
-var $as_Lreversi_models_Board = (function(obj) {
-  return (($is_Lreversi_models_Board(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "reversi.models.Board"))
+var $as_Lmyreversi_models_reversi_Board = (function(obj) {
+  return (($is_Lmyreversi_models_reversi_Board(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "myreversi.models.reversi.Board"))
 });
-var $isArrayOf_Lreversi_models_Board = (function(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lreversi_models_Board)))
+var $isArrayOf_Lmyreversi_models_reversi_Board = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmyreversi_models_reversi_Board)))
 });
-var $asArrayOf_Lreversi_models_Board = (function(obj, depth) {
-  return (($isArrayOf_Lreversi_models_Board(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lreversi.models.Board;", depth))
+var $asArrayOf_Lmyreversi_models_reversi_Board = (function(obj, depth) {
+  return (($isArrayOf_Lmyreversi_models_reversi_Board(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmyreversi.models.reversi.Board;", depth))
 });
-var $d_Lreversi_models_Board = new $TypeData().initClass({
-  Lreversi_models_Board: 0
-}, false, "reversi.models.Board", {
-  Lreversi_models_Board: 1,
+var $d_Lmyreversi_models_reversi_Board = new $TypeData().initClass({
+  Lmyreversi_models_reversi_Board: 0
+}, false, "myreversi.models.reversi.Board", {
+  Lmyreversi_models_reversi_Board: 1,
   O: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_models_Board.prototype.$classData = $d_Lreversi_models_Board;
+$c_Lmyreversi_models_reversi_Board.prototype.$classData = $d_Lmyreversi_models_reversi_Board;
 /** @constructor */
-var $c_Lreversi_models_Cell = (function() {
+var $c_Lmyreversi_models_reversi_Cell = (function() {
   $c_O.call(this);
   this.point$1 = null;
   this.reversi$1 = null
 });
-$c_Lreversi_models_Cell.prototype = new $h_O();
-$c_Lreversi_models_Cell.prototype.constructor = $c_Lreversi_models_Cell;
+$c_Lmyreversi_models_reversi_Cell.prototype = new $h_O();
+$c_Lmyreversi_models_reversi_Cell.prototype.constructor = $c_Lmyreversi_models_reversi_Cell;
 /** @constructor */
-var $h_Lreversi_models_Cell = (function() {
+var $h_Lmyreversi_models_reversi_Cell = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_Cell.prototype = $c_Lreversi_models_Cell.prototype;
-$c_Lreversi_models_Cell.prototype.productPrefix__T = (function() {
+$h_Lmyreversi_models_reversi_Cell.prototype = $c_Lmyreversi_models_reversi_Cell.prototype;
+$c_Lmyreversi_models_reversi_Cell.prototype.productPrefix__T = (function() {
   return "Cell"
 });
-$c_Lreversi_models_Cell.prototype.productArity__I = (function() {
+$c_Lmyreversi_models_reversi_Cell.prototype.productArity__I = (function() {
   return 2
 });
-$c_Lreversi_models_Cell.prototype.init___Lreversi_models_Point__s_Option = (function(point, reversi) {
-  this.point$1 = point;
-  this.reversi$1 = reversi;
-  return this
-});
-$c_Lreversi_models_Cell.prototype.equals__O__Z = (function(x$1) {
+$c_Lmyreversi_models_reversi_Cell.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lreversi_models_Cell(x$1)) {
-    var Cell$1 = $as_Lreversi_models_Cell(x$1);
+  } else if ($is_Lmyreversi_models_reversi_Cell(x$1)) {
+    var Cell$1 = $as_Lmyreversi_models_reversi_Cell(x$1);
     var x = this.point$1;
     var x$2 = Cell$1.point$1;
     if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
@@ -8075,7 +8070,7 @@ $c_Lreversi_models_Cell.prototype.equals__O__Z = (function(x$1) {
     return false
   }
 });
-$c_Lreversi_models_Cell.prototype.productElement__I__O = (function(x$1) {
+$c_Lmyreversi_models_reversi_Cell.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.point$1;
@@ -8090,26 +8085,24 @@ $c_Lreversi_models_Cell.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lreversi_models_Cell.prototype.isPlacedAt__Lreversi_models_Point__Z = (function(p) {
+$c_Lmyreversi_models_reversi_Cell.prototype.isPlacedAt__Lmyreversi_models_shared_Point__Z = (function(p) {
   var x = this.point$1;
   return ((x === null) ? (p === null) : x.equals__O__Z(p))
 });
-$c_Lreversi_models_Cell.prototype.toString__T = (function() {
+$c_Lmyreversi_models_reversi_Cell.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lreversi_models_Cell.prototype.isPlacedAt__I__I__Z = (function(x, y) {
+$c_Lmyreversi_models_reversi_Cell.prototype.init___Lmyreversi_models_shared_Point__s_Option = (function(point, reversi) {
+  this.point$1 = point;
+  this.reversi$1 = reversi;
+  return this
+});
+$c_Lmyreversi_models_reversi_Cell.prototype.isPlacedAt__I__I__Z = (function(x, y) {
   var x$2 = this.point$1;
-  var x$3 = new $c_Lreversi_models_Point().init___I__I(x, y);
+  var x$3 = new $c_Lmyreversi_models_shared_Point().init___I__I(x, y);
   return ((x$2 !== null) && x$2.equals__O__Z(x$3))
 });
-$c_Lreversi_models_Cell.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__I(this, (-889275714))
-});
-$c_Lreversi_models_Cell.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
-});
-$c_Lreversi_models_Cell.prototype.toggleReversi__Lreversi_models_Cell = (function() {
+$c_Lmyreversi_models_reversi_Cell.prototype.toggleReversi__Lmyreversi_models_reversi_Cell = (function() {
   $m_s_Predef$().require__Z__V(this.reversi$1.isDefined__Z());
   var rc11 = false;
   var x2 = null;
@@ -8117,164 +8110,84 @@ $c_Lreversi_models_Cell.prototype.toggleReversi__Lreversi_models_Cell = (functio
   if ($is_s_Some(x1)) {
     rc11 = true;
     x2 = $as_s_Some(x1);
-    var p3 = $as_Lreversi_models_Reversi(x2.x$2);
+    var p3 = $as_Lmyreversi_models_reversi_Reversi(x2.x$2);
     if ((p3 !== null)) {
       var p4 = p3.color$1;
-      var x = $m_Lreversi_models_Color$White$();
+      var x = $m_Lmyreversi_models_shared_Color$White$();
       if ((x === p4)) {
-        var x$4 = new $c_s_Some().init___O(new $c_Lreversi_models_Reversi().init___Lreversi_models_Color($m_Lreversi_models_Color$Black$()));
+        var x$4 = new $c_s_Some().init___O(new $c_Lmyreversi_models_reversi_Reversi().init___Lmyreversi_models_shared_Color($m_Lmyreversi_models_shared_Color$Black$()));
         var x$5 = this.point$1;
-        return new $c_Lreversi_models_Cell().init___Lreversi_models_Point__s_Option(x$5, x$4)
+        return new $c_Lmyreversi_models_reversi_Cell().init___Lmyreversi_models_shared_Point__s_Option(x$5, x$4)
       }
     }
   };
   if (rc11) {
-    var p6 = $as_Lreversi_models_Reversi(x2.x$2);
+    var p6 = $as_Lmyreversi_models_reversi_Reversi(x2.x$2);
     if ((p6 !== null)) {
       var p7 = p6.color$1;
-      var x$3 = $m_Lreversi_models_Color$Black$();
+      var x$3 = $m_Lmyreversi_models_shared_Color$Black$();
       if ((x$3 === p7)) {
-        var x$6$2 = new $c_s_Some().init___O(new $c_Lreversi_models_Reversi().init___Lreversi_models_Color($m_Lreversi_models_Color$White$()));
+        var x$6$2 = new $c_s_Some().init___O(new $c_Lmyreversi_models_reversi_Reversi().init___Lmyreversi_models_shared_Color($m_Lmyreversi_models_shared_Color$White$()));
         var x$7 = this.point$1;
-        return new $c_Lreversi_models_Cell().init___Lreversi_models_Point__s_Option(x$7, x$6$2)
+        return new $c_Lmyreversi_models_reversi_Cell().init___Lmyreversi_models_shared_Point__s_Option(x$7, x$6$2)
       }
     }
   };
   return this
 });
-var $is_Lreversi_models_Cell = (function(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lreversi_models_Cell)))
+$c_Lmyreversi_models_reversi_Cell.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-var $as_Lreversi_models_Cell = (function(obj) {
-  return (($is_Lreversi_models_Cell(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "reversi.models.Cell"))
-});
-var $isArrayOf_Lreversi_models_Cell = (function(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lreversi_models_Cell)))
-});
-var $asArrayOf_Lreversi_models_Cell = (function(obj, depth) {
-  return (($isArrayOf_Lreversi_models_Cell(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lreversi.models.Cell;", depth))
-});
-var $d_Lreversi_models_Cell = new $TypeData().initClass({
-  Lreversi_models_Cell: 0
-}, false, "reversi.models.Cell", {
-  Lreversi_models_Cell: 1,
-  O: 1,
-  s_Product: 1,
-  s_Equals: 1,
-  s_Serializable: 1,
-  Ljava_io_Serializable: 1
-});
-$c_Lreversi_models_Cell.prototype.$classData = $d_Lreversi_models_Cell;
-/** @constructor */
-var $c_Lreversi_models_Point = (function() {
-  $c_O.call(this);
-  this.x$1 = 0;
-  this.y$1 = 0
-});
-$c_Lreversi_models_Point.prototype = new $h_O();
-$c_Lreversi_models_Point.prototype.constructor = $c_Lreversi_models_Point;
-/** @constructor */
-var $h_Lreversi_models_Point = (function() {
-  /*<skip>*/
-});
-$h_Lreversi_models_Point.prototype = $c_Lreversi_models_Point.prototype;
-$c_Lreversi_models_Point.prototype.productPrefix__T = (function() {
-  return "Point"
-});
-$c_Lreversi_models_Point.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lreversi_models_Point.prototype.equals__O__Z = (function(x$1) {
-  if ((this === x$1)) {
-    return true
-  } else if ($is_Lreversi_models_Point(x$1)) {
-    var Point$1 = $as_Lreversi_models_Point(x$1);
-    return ((this.x$1 === Point$1.x$1) && (this.y$1 === Point$1.y$1))
-  } else {
-    return false
-  }
-});
-$c_Lreversi_models_Point.prototype.move__Lreversi_models_Vector__Lreversi_models_Point = (function(v) {
-  return new $c_Lreversi_models_Point().init___I__I(((this.x$1 + v.x$1) | 0), ((this.y$1 + v.y$1) | 0))
-});
-$c_Lreversi_models_Point.prototype.productElement__I__O = (function(x$1) {
-  switch (x$1) {
-    case 0: {
-      return this.x$1;
-      break
-    }
-    case 1: {
-      return this.y$1;
-      break
-    }
-    default: {
-      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
-    }
-  }
-});
-$c_Lreversi_models_Point.prototype.init___I__I = (function(x, y) {
-  this.x$1 = x;
-  this.y$1 = y;
-  return this
-});
-$c_Lreversi_models_Point.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
-});
-$c_Lreversi_models_Point.prototype.hashCode__I = (function() {
-  var acc = (-889275714);
-  acc = $m_sr_Statics$().mix__I__I__I(acc, this.x$1);
-  acc = $m_sr_Statics$().mix__I__I__I(acc, this.y$1);
-  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 2)
-});
-$c_Lreversi_models_Point.prototype.productIterator__sc_Iterator = (function() {
+$c_Lmyreversi_models_reversi_Cell.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $is_Lreversi_models_Point = (function(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lreversi_models_Point)))
+var $is_Lmyreversi_models_reversi_Cell = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmyreversi_models_reversi_Cell)))
 });
-var $as_Lreversi_models_Point = (function(obj) {
-  return (($is_Lreversi_models_Point(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "reversi.models.Point"))
+var $as_Lmyreversi_models_reversi_Cell = (function(obj) {
+  return (($is_Lmyreversi_models_reversi_Cell(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "myreversi.models.reversi.Cell"))
 });
-var $isArrayOf_Lreversi_models_Point = (function(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lreversi_models_Point)))
+var $isArrayOf_Lmyreversi_models_reversi_Cell = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmyreversi_models_reversi_Cell)))
 });
-var $asArrayOf_Lreversi_models_Point = (function(obj, depth) {
-  return (($isArrayOf_Lreversi_models_Point(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lreversi.models.Point;", depth))
+var $asArrayOf_Lmyreversi_models_reversi_Cell = (function(obj, depth) {
+  return (($isArrayOf_Lmyreversi_models_reversi_Cell(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmyreversi.models.reversi.Cell;", depth))
 });
-var $d_Lreversi_models_Point = new $TypeData().initClass({
-  Lreversi_models_Point: 0
-}, false, "reversi.models.Point", {
-  Lreversi_models_Point: 1,
+var $d_Lmyreversi_models_reversi_Cell = new $TypeData().initClass({
+  Lmyreversi_models_reversi_Cell: 0
+}, false, "myreversi.models.reversi.Cell", {
+  Lmyreversi_models_reversi_Cell: 1,
   O: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_models_Point.prototype.$classData = $d_Lreversi_models_Point;
+$c_Lmyreversi_models_reversi_Cell.prototype.$classData = $d_Lmyreversi_models_reversi_Cell;
 /** @constructor */
-var $c_Lreversi_models_Reversi = (function() {
+var $c_Lmyreversi_models_reversi_Reversi = (function() {
   $c_O.call(this);
   this.color$1 = null
 });
-$c_Lreversi_models_Reversi.prototype = new $h_O();
-$c_Lreversi_models_Reversi.prototype.constructor = $c_Lreversi_models_Reversi;
+$c_Lmyreversi_models_reversi_Reversi.prototype = new $h_O();
+$c_Lmyreversi_models_reversi_Reversi.prototype.constructor = $c_Lmyreversi_models_reversi_Reversi;
 /** @constructor */
-var $h_Lreversi_models_Reversi = (function() {
+var $h_Lmyreversi_models_reversi_Reversi = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_Reversi.prototype = $c_Lreversi_models_Reversi.prototype;
-$c_Lreversi_models_Reversi.prototype.productPrefix__T = (function() {
+$h_Lmyreversi_models_reversi_Reversi.prototype = $c_Lmyreversi_models_reversi_Reversi.prototype;
+$c_Lmyreversi_models_reversi_Reversi.prototype.productPrefix__T = (function() {
   return "Reversi"
 });
-$c_Lreversi_models_Reversi.prototype.productArity__I = (function() {
+$c_Lmyreversi_models_reversi_Reversi.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lreversi_models_Reversi.prototype.equals__O__Z = (function(x$1) {
+$c_Lmyreversi_models_reversi_Reversi.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lreversi_models_Reversi(x$1)) {
-    var Reversi$1 = $as_Lreversi_models_Reversi(x$1);
+  } else if ($is_Lmyreversi_models_reversi_Reversi(x$1)) {
+    var Reversi$1 = $as_Lmyreversi_models_reversi_Reversi(x$1);
     var x = this.color$1;
     var x$2 = Reversi$1.color$1;
     return (x === x$2)
@@ -8282,7 +8195,7 @@ $c_Lreversi_models_Reversi.prototype.equals__O__Z = (function(x$1) {
     return false
   }
 });
-$c_Lreversi_models_Reversi.prototype.productElement__I__O = (function(x$1) {
+$c_Lmyreversi_models_reversi_Reversi.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.color$1;
@@ -8293,73 +8206,73 @@ $c_Lreversi_models_Reversi.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lreversi_models_Reversi.prototype.toString__T = (function() {
+$c_Lmyreversi_models_reversi_Reversi.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lreversi_models_Reversi.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__I(this, (-889275714))
-});
-$c_Lreversi_models_Reversi.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
-});
-$c_Lreversi_models_Reversi.prototype.init___Lreversi_models_Color = (function(color) {
+$c_Lmyreversi_models_reversi_Reversi.prototype.init___Lmyreversi_models_shared_Color = (function(color) {
   this.color$1 = color;
   return this
 });
-var $is_Lreversi_models_Reversi = (function(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lreversi_models_Reversi)))
+$c_Lmyreversi_models_reversi_Reversi.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-var $as_Lreversi_models_Reversi = (function(obj) {
-  return (($is_Lreversi_models_Reversi(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "reversi.models.Reversi"))
+$c_Lmyreversi_models_reversi_Reversi.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $isArrayOf_Lreversi_models_Reversi = (function(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lreversi_models_Reversi)))
+var $is_Lmyreversi_models_reversi_Reversi = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmyreversi_models_reversi_Reversi)))
 });
-var $asArrayOf_Lreversi_models_Reversi = (function(obj, depth) {
-  return (($isArrayOf_Lreversi_models_Reversi(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lreversi.models.Reversi;", depth))
+var $as_Lmyreversi_models_reversi_Reversi = (function(obj) {
+  return (($is_Lmyreversi_models_reversi_Reversi(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "myreversi.models.reversi.Reversi"))
 });
-var $d_Lreversi_models_Reversi = new $TypeData().initClass({
-  Lreversi_models_Reversi: 0
-}, false, "reversi.models.Reversi", {
-  Lreversi_models_Reversi: 1,
+var $isArrayOf_Lmyreversi_models_reversi_Reversi = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmyreversi_models_reversi_Reversi)))
+});
+var $asArrayOf_Lmyreversi_models_reversi_Reversi = (function(obj, depth) {
+  return (($isArrayOf_Lmyreversi_models_reversi_Reversi(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmyreversi.models.reversi.Reversi;", depth))
+});
+var $d_Lmyreversi_models_reversi_Reversi = new $TypeData().initClass({
+  Lmyreversi_models_reversi_Reversi: 0
+}, false, "myreversi.models.reversi.Reversi", {
+  Lmyreversi_models_reversi_Reversi: 1,
   O: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_models_Reversi.prototype.$classData = $d_Lreversi_models_Reversi;
+$c_Lmyreversi_models_reversi_Reversi.prototype.$classData = $d_Lmyreversi_models_reversi_Reversi;
 /** @constructor */
-var $c_Lreversi_models_Vector = (function() {
+var $c_Lmyreversi_models_shared_Point = (function() {
   $c_O.call(this);
   this.x$1 = 0;
   this.y$1 = 0
 });
-$c_Lreversi_models_Vector.prototype = new $h_O();
-$c_Lreversi_models_Vector.prototype.constructor = $c_Lreversi_models_Vector;
+$c_Lmyreversi_models_shared_Point.prototype = new $h_O();
+$c_Lmyreversi_models_shared_Point.prototype.constructor = $c_Lmyreversi_models_shared_Point;
 /** @constructor */
-var $h_Lreversi_models_Vector = (function() {
+var $h_Lmyreversi_models_shared_Point = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_Vector.prototype = $c_Lreversi_models_Vector.prototype;
-$c_Lreversi_models_Vector.prototype.productPrefix__T = (function() {
-  return "Vector"
+$h_Lmyreversi_models_shared_Point.prototype = $c_Lmyreversi_models_shared_Point.prototype;
+$c_Lmyreversi_models_shared_Point.prototype.productPrefix__T = (function() {
+  return "Point"
 });
-$c_Lreversi_models_Vector.prototype.productArity__I = (function() {
+$c_Lmyreversi_models_shared_Point.prototype.productArity__I = (function() {
   return 2
 });
-$c_Lreversi_models_Vector.prototype.equals__O__Z = (function(x$1) {
+$c_Lmyreversi_models_shared_Point.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lreversi_models_Vector(x$1)) {
-    var Vector$1 = $as_Lreversi_models_Vector(x$1);
-    return ((this.x$1 === Vector$1.x$1) && (this.y$1 === Vector$1.y$1))
+  } else if ($is_Lmyreversi_models_shared_Point(x$1)) {
+    var Point$1 = $as_Lmyreversi_models_shared_Point(x$1);
+    return ((this.x$1 === Point$1.x$1) && (this.y$1 === Point$1.y$1))
   } else {
     return false
   }
 });
-$c_Lreversi_models_Vector.prototype.productElement__I__O = (function(x$1) {
+$c_Lmyreversi_models_shared_Point.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.x$1;
@@ -8374,62 +8287,149 @@ $c_Lreversi_models_Vector.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lreversi_models_Vector.prototype.init___I__I = (function(x, y) {
+$c_Lmyreversi_models_shared_Point.prototype.init___I__I = (function(x, y) {
   this.x$1 = x;
   this.y$1 = y;
   return this
 });
-$c_Lreversi_models_Vector.prototype.toString__T = (function() {
+$c_Lmyreversi_models_shared_Point.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lreversi_models_Vector.prototype.hashCode__I = (function() {
+$c_Lmyreversi_models_shared_Point.prototype.move__Lmyreversi_models_shared_Vector__Lmyreversi_models_shared_Point = (function(v) {
+  return new $c_Lmyreversi_models_shared_Point().init___I__I(((this.x$1 + v.x$1) | 0), ((this.y$1 + v.y$1) | 0))
+});
+$c_Lmyreversi_models_shared_Point.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   acc = $m_sr_Statics$().mix__I__I__I(acc, this.x$1);
   acc = $m_sr_Statics$().mix__I__I__I(acc, this.y$1);
   return $m_sr_Statics$().finalizeHash__I__I__I(acc, 2)
 });
-$c_Lreversi_models_Vector.prototype.productIterator__sc_Iterator = (function() {
+$c_Lmyreversi_models_shared_Point.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $is_Lreversi_models_Vector = (function(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lreversi_models_Vector)))
+var $is_Lmyreversi_models_shared_Point = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmyreversi_models_shared_Point)))
 });
-var $as_Lreversi_models_Vector = (function(obj) {
-  return (($is_Lreversi_models_Vector(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "reversi.models.Vector"))
+var $as_Lmyreversi_models_shared_Point = (function(obj) {
+  return (($is_Lmyreversi_models_shared_Point(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "myreversi.models.shared.Point"))
 });
-var $isArrayOf_Lreversi_models_Vector = (function(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lreversi_models_Vector)))
+var $isArrayOf_Lmyreversi_models_shared_Point = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmyreversi_models_shared_Point)))
 });
-var $asArrayOf_Lreversi_models_Vector = (function(obj, depth) {
-  return (($isArrayOf_Lreversi_models_Vector(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lreversi.models.Vector;", depth))
+var $asArrayOf_Lmyreversi_models_shared_Point = (function(obj, depth) {
+  return (($isArrayOf_Lmyreversi_models_shared_Point(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmyreversi.models.shared.Point;", depth))
 });
-var $d_Lreversi_models_Vector = new $TypeData().initClass({
-  Lreversi_models_Vector: 0
-}, false, "reversi.models.Vector", {
-  Lreversi_models_Vector: 1,
+var $d_Lmyreversi_models_shared_Point = new $TypeData().initClass({
+  Lmyreversi_models_shared_Point: 0
+}, false, "myreversi.models.shared.Point", {
+  Lmyreversi_models_shared_Point: 1,
   O: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_models_Vector.prototype.$classData = $d_Lreversi_models_Vector;
+$c_Lmyreversi_models_shared_Point.prototype.$classData = $d_Lmyreversi_models_shared_Point;
 /** @constructor */
-var $c_Lreversi_views_BoardView$$anonfun$1 = (function() {
+var $c_Lmyreversi_models_shared_Vector = (function() {
+  $c_O.call(this);
+  this.x$1 = 0;
+  this.y$1 = 0
+});
+$c_Lmyreversi_models_shared_Vector.prototype = new $h_O();
+$c_Lmyreversi_models_shared_Vector.prototype.constructor = $c_Lmyreversi_models_shared_Vector;
+/** @constructor */
+var $h_Lmyreversi_models_shared_Vector = (function() {
+  /*<skip>*/
+});
+$h_Lmyreversi_models_shared_Vector.prototype = $c_Lmyreversi_models_shared_Vector.prototype;
+$c_Lmyreversi_models_shared_Vector.prototype.productPrefix__T = (function() {
+  return "Vector"
+});
+$c_Lmyreversi_models_shared_Vector.prototype.productArity__I = (function() {
+  return 2
+});
+$c_Lmyreversi_models_shared_Vector.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else if ($is_Lmyreversi_models_shared_Vector(x$1)) {
+    var Vector$1 = $as_Lmyreversi_models_shared_Vector(x$1);
+    return ((this.x$1 === Vector$1.x$1) && (this.y$1 === Vector$1.y$1))
+  } else {
+    return false
+  }
+});
+$c_Lmyreversi_models_shared_Vector.prototype.productElement__I__O = (function(x$1) {
+  switch (x$1) {
+    case 0: {
+      return this.x$1;
+      break
+    }
+    case 1: {
+      return this.y$1;
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
+    }
+  }
+});
+$c_Lmyreversi_models_shared_Vector.prototype.init___I__I = (function(x, y) {
+  this.x$1 = x;
+  this.y$1 = y;
+  return this
+});
+$c_Lmyreversi_models_shared_Vector.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lmyreversi_models_shared_Vector.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  acc = $m_sr_Statics$().mix__I__I__I(acc, this.x$1);
+  acc = $m_sr_Statics$().mix__I__I__I(acc, this.y$1);
+  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 2)
+});
+$c_Lmyreversi_models_shared_Vector.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
+});
+var $is_Lmyreversi_models_shared_Vector = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmyreversi_models_shared_Vector)))
+});
+var $as_Lmyreversi_models_shared_Vector = (function(obj) {
+  return (($is_Lmyreversi_models_shared_Vector(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "myreversi.models.shared.Vector"))
+});
+var $isArrayOf_Lmyreversi_models_shared_Vector = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmyreversi_models_shared_Vector)))
+});
+var $asArrayOf_Lmyreversi_models_shared_Vector = (function(obj, depth) {
+  return (($isArrayOf_Lmyreversi_models_shared_Vector(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmyreversi.models.shared.Vector;", depth))
+});
+var $d_Lmyreversi_models_shared_Vector = new $TypeData().initClass({
+  Lmyreversi_models_shared_Vector: 0
+}, false, "myreversi.models.shared.Vector", {
+  Lmyreversi_models_shared_Vector: 1,
+  O: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lmyreversi_models_shared_Vector.prototype.$classData = $d_Lmyreversi_models_shared_Vector;
+/** @constructor */
+var $c_Lmyreversi_views_BoardView$$anonfun$1 = (function() {
   $c_sr_AbstractFunction1.call(this);
   this.$$outer$2 = null
 });
-$c_Lreversi_views_BoardView$$anonfun$1.prototype = new $h_sr_AbstractFunction1();
-$c_Lreversi_views_BoardView$$anonfun$1.prototype.constructor = $c_Lreversi_views_BoardView$$anonfun$1;
+$c_Lmyreversi_views_BoardView$$anonfun$1.prototype = new $h_sr_AbstractFunction1();
+$c_Lmyreversi_views_BoardView$$anonfun$1.prototype.constructor = $c_Lmyreversi_views_BoardView$$anonfun$1;
 /** @constructor */
-var $h_Lreversi_views_BoardView$$anonfun$1 = (function() {
+var $h_Lmyreversi_views_BoardView$$anonfun$1 = (function() {
   /*<skip>*/
 });
-$h_Lreversi_views_BoardView$$anonfun$1.prototype = $c_Lreversi_views_BoardView$$anonfun$1.prototype;
-$c_Lreversi_views_BoardView$$anonfun$1.prototype.apply__O__O = (function(v1) {
+$h_Lmyreversi_views_BoardView$$anonfun$1.prototype = $c_Lmyreversi_views_BoardView$$anonfun$1.prototype;
+$c_Lmyreversi_views_BoardView$$anonfun$1.prototype.apply__O__O = (function(v1) {
   return this.apply__I__Lorg_scalajs_jquery_JQuery($uI(v1))
 });
-$c_Lreversi_views_BoardView$$anonfun$1.prototype.init___Lreversi_views_BoardView = (function($$outer) {
+$c_Lmyreversi_views_BoardView$$anonfun$1.prototype.init___Lmyreversi_views_BoardView = (function($$outer) {
   if (($$outer === null)) {
     throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
   } else {
@@ -8437,7 +8437,7 @@ $c_Lreversi_views_BoardView$$anonfun$1.prototype.init___Lreversi_views_BoardView
   };
   return this
 });
-$c_Lreversi_views_BoardView$$anonfun$1.prototype.apply__I__Lorg_scalajs_jquery_JQuery = (function(y) {
+$c_Lmyreversi_views_BoardView$$anonfun$1.prototype.apply__I__Lorg_scalajs_jquery_JQuery = (function(y) {
   var this$1 = this.$$outer$2.board$1.cellCollection$1;
   $m_sc_Seq$();
   $m_sci_Seq$();
@@ -8445,7 +8445,7 @@ $c_Lreversi_views_BoardView$$anonfun$1.prototype.apply__I__Lorg_scalajs_jquery_J
   var this$4 = this$1.iterator__sc_Iterator();
   while (this$4.hasNext__Z()) {
     var arg1 = this$4.next__O();
-    var x$1 = $as_Lreversi_models_Cell(arg1);
+    var x$1 = $as_Lmyreversi_models_reversi_Cell(arg1);
     if ((x$1.point$1.y$1 === y)) {
       b.$$plus$eq__O__scm_ListBuffer(arg1)
     }
@@ -8453,8 +8453,8 @@ $c_Lreversi_views_BoardView$$anonfun$1.prototype.apply__I__Lorg_scalajs_jquery_J
   var cellRecord = b.toList__sci_List();
   var f = (function(arg$outer) {
     return (function(c$2) {
-      var c = $as_Lreversi_models_Cell(c$2);
-      return new $c_Lreversi_views_CellView().init___Lreversi_models_Cell__Lreversi_models_Board(c, arg$outer.$$outer$2.board$1).render__Lorg_scalajs_jquery_JQuery()
+      var c = $as_Lmyreversi_models_reversi_Cell(c$2);
+      return new $c_Lmyreversi_views_CellView().init___Lmyreversi_models_reversi_Cell__Lmyreversi_models_reversi_Board(c, arg$outer.$$outer$2.board$1).render__Lorg_scalajs_jquery_JQuery()
     })
   })(this);
   var this$5 = $m_sc_Seq$();
@@ -8509,17 +8509,17 @@ $c_Lreversi_views_BoardView$$anonfun$1.prototype.apply__I__Lorg_scalajs_jquery_J
   };
   return jsx$4["apply"](jsx$2, jsx$3)
 });
-var $d_Lreversi_views_BoardView$$anonfun$1 = new $TypeData().initClass({
-  Lreversi_views_BoardView$$anonfun$1: 0
-}, false, "reversi.views.BoardView$$anonfun$1", {
-  Lreversi_views_BoardView$$anonfun$1: 1,
+var $d_Lmyreversi_views_BoardView$$anonfun$1 = new $TypeData().initClass({
+  Lmyreversi_views_BoardView$$anonfun$1: 0
+}, false, "myreversi.views.BoardView$$anonfun$1", {
+  Lmyreversi_views_BoardView$$anonfun$1: 1,
   sr_AbstractFunction1: 1,
   O: 1,
   F1: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_views_BoardView$$anonfun$1.prototype.$classData = $d_Lreversi_views_BoardView$$anonfun$1;
+$c_Lmyreversi_views_BoardView$$anonfun$1.prototype.$classData = $d_Lmyreversi_views_BoardView$$anonfun$1;
 /** @constructor */
 var $c_jl_ArithmeticException = (function() {
   $c_jl_RuntimeException.call(this)
@@ -9952,303 +9952,303 @@ var $asArrayOf_Ljava_io_PrintStream = (function(obj, depth) {
   return (($isArrayOf_Ljava_io_PrintStream(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.io.PrintStream;", depth))
 });
 /** @constructor */
-var $c_Lreversi_exception_UnknownException = (function() {
-  $c_Lreversi_exception_ReversiException.call(this)
+var $c_Lmyreversi_exception_UnknownException = (function() {
+  $c_Lmyreversi_exception_ReversiException.call(this)
 });
-$c_Lreversi_exception_UnknownException.prototype = new $h_Lreversi_exception_ReversiException();
-$c_Lreversi_exception_UnknownException.prototype.constructor = $c_Lreversi_exception_UnknownException;
+$c_Lmyreversi_exception_UnknownException.prototype = new $h_Lmyreversi_exception_ReversiException();
+$c_Lmyreversi_exception_UnknownException.prototype.constructor = $c_Lmyreversi_exception_UnknownException;
 /** @constructor */
-var $h_Lreversi_exception_UnknownException = (function() {
+var $h_Lmyreversi_exception_UnknownException = (function() {
   /*<skip>*/
 });
-$h_Lreversi_exception_UnknownException.prototype = $c_Lreversi_exception_UnknownException.prototype;
-var $d_Lreversi_exception_UnknownException = new $TypeData().initClass({
-  Lreversi_exception_UnknownException: 0
-}, false, "reversi.exception.UnknownException", {
-  Lreversi_exception_UnknownException: 1,
-  Lreversi_exception_ReversiException: 1,
+$h_Lmyreversi_exception_UnknownException.prototype = $c_Lmyreversi_exception_UnknownException.prototype;
+var $d_Lmyreversi_exception_UnknownException = new $TypeData().initClass({
+  Lmyreversi_exception_UnknownException: 0
+}, false, "myreversi.exception.UnknownException", {
+  Lmyreversi_exception_UnknownException: 1,
+  Lmyreversi_exception_ReversiException: 1,
   jl_RuntimeException: 1,
   jl_Exception: 1,
   jl_Throwable: 1,
   O: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_exception_UnknownException.prototype.$classData = $d_Lreversi_exception_UnknownException;
+$c_Lmyreversi_exception_UnknownException.prototype.$classData = $d_Lmyreversi_exception_UnknownException;
 /** @constructor */
-var $c_Lreversi_models_Color$Black$ = (function() {
-  $c_Lreversi_models_Color.call(this)
+var $c_Lmyreversi_models_player_Player$Black$ = (function() {
+  $c_Lmyreversi_models_player_Player.call(this)
 });
-$c_Lreversi_models_Color$Black$.prototype = new $h_Lreversi_models_Color();
-$c_Lreversi_models_Color$Black$.prototype.constructor = $c_Lreversi_models_Color$Black$;
+$c_Lmyreversi_models_player_Player$Black$.prototype = new $h_Lmyreversi_models_player_Player();
+$c_Lmyreversi_models_player_Player$Black$.prototype.constructor = $c_Lmyreversi_models_player_Player$Black$;
 /** @constructor */
-var $h_Lreversi_models_Color$Black$ = (function() {
+var $h_Lmyreversi_models_player_Player$Black$ = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_Color$Black$.prototype = $c_Lreversi_models_Color$Black$.prototype;
-$c_Lreversi_models_Color$Black$.prototype.init___ = (function() {
-  $c_Lreversi_models_Color.prototype.init___T.call(this, "black");
-  $n_Lreversi_models_Color$Black$ = this;
+$h_Lmyreversi_models_player_Player$Black$.prototype = $c_Lmyreversi_models_player_Player$Black$.prototype;
+$c_Lmyreversi_models_player_Player$Black$.prototype.init___ = (function() {
+  $c_Lmyreversi_models_player_Player.prototype.init___Lmyreversi_models_shared_Color.call(this, $m_Lmyreversi_models_shared_Color$Black$());
+  $n_Lmyreversi_models_player_Player$Black$ = this;
   return this
 });
-$c_Lreversi_models_Color$Black$.prototype.productPrefix__T = (function() {
+$c_Lmyreversi_models_player_Player$Black$.prototype.productPrefix__T = (function() {
   return "Black"
 });
-$c_Lreversi_models_Color$Black$.prototype.productArity__I = (function() {
+$c_Lmyreversi_models_player_Player$Black$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lreversi_models_Color$Black$.prototype.productElement__I__O = (function(x$1) {
+$c_Lmyreversi_models_player_Player$Black$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lreversi_models_Color$Black$.prototype.toString__T = (function() {
+$c_Lmyreversi_models_player_Player$Black$.prototype.toString__T = (function() {
   return "Black"
 });
-$c_Lreversi_models_Color$Black$.prototype.hashCode__I = (function() {
+$c_Lmyreversi_models_player_Player$Black$.prototype.hashCode__I = (function() {
   return 64266207
 });
-$c_Lreversi_models_Color$Black$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lmyreversi_models_player_Player$Black$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lreversi_models_Color$Black$ = new $TypeData().initClass({
-  Lreversi_models_Color$Black$: 0
-}, false, "reversi.models.Color$Black$", {
-  Lreversi_models_Color$Black$: 1,
-  Lreversi_models_Color: 1,
+var $d_Lmyreversi_models_player_Player$Black$ = new $TypeData().initClass({
+  Lmyreversi_models_player_Player$Black$: 0
+}, false, "myreversi.models.player.Player$Black$", {
+  Lmyreversi_models_player_Player$Black$: 1,
+  Lmyreversi_models_player_Player: 1,
   O: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_models_Color$Black$.prototype.$classData = $d_Lreversi_models_Color$Black$;
-var $n_Lreversi_models_Color$Black$ = (void 0);
-var $m_Lreversi_models_Color$Black$ = (function() {
-  if ((!$n_Lreversi_models_Color$Black$)) {
-    $n_Lreversi_models_Color$Black$ = new $c_Lreversi_models_Color$Black$().init___()
+$c_Lmyreversi_models_player_Player$Black$.prototype.$classData = $d_Lmyreversi_models_player_Player$Black$;
+var $n_Lmyreversi_models_player_Player$Black$ = (void 0);
+var $m_Lmyreversi_models_player_Player$Black$ = (function() {
+  if ((!$n_Lmyreversi_models_player_Player$Black$)) {
+    $n_Lmyreversi_models_player_Player$Black$ = new $c_Lmyreversi_models_player_Player$Black$().init___()
   };
-  return $n_Lreversi_models_Color$Black$
+  return $n_Lmyreversi_models_player_Player$Black$
 });
 /** @constructor */
-var $c_Lreversi_models_Color$White$ = (function() {
-  $c_Lreversi_models_Color.call(this)
+var $c_Lmyreversi_models_player_Player$White$ = (function() {
+  $c_Lmyreversi_models_player_Player.call(this)
 });
-$c_Lreversi_models_Color$White$.prototype = new $h_Lreversi_models_Color();
-$c_Lreversi_models_Color$White$.prototype.constructor = $c_Lreversi_models_Color$White$;
+$c_Lmyreversi_models_player_Player$White$.prototype = new $h_Lmyreversi_models_player_Player();
+$c_Lmyreversi_models_player_Player$White$.prototype.constructor = $c_Lmyreversi_models_player_Player$White$;
 /** @constructor */
-var $h_Lreversi_models_Color$White$ = (function() {
+var $h_Lmyreversi_models_player_Player$White$ = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_Color$White$.prototype = $c_Lreversi_models_Color$White$.prototype;
-$c_Lreversi_models_Color$White$.prototype.init___ = (function() {
-  $c_Lreversi_models_Color.prototype.init___T.call(this, "white");
-  $n_Lreversi_models_Color$White$ = this;
+$h_Lmyreversi_models_player_Player$White$.prototype = $c_Lmyreversi_models_player_Player$White$.prototype;
+$c_Lmyreversi_models_player_Player$White$.prototype.init___ = (function() {
+  $c_Lmyreversi_models_player_Player.prototype.init___Lmyreversi_models_shared_Color.call(this, $m_Lmyreversi_models_shared_Color$White$());
+  $n_Lmyreversi_models_player_Player$White$ = this;
   return this
 });
-$c_Lreversi_models_Color$White$.prototype.productPrefix__T = (function() {
+$c_Lmyreversi_models_player_Player$White$.prototype.productPrefix__T = (function() {
   return "White"
 });
-$c_Lreversi_models_Color$White$.prototype.productArity__I = (function() {
+$c_Lmyreversi_models_player_Player$White$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lreversi_models_Color$White$.prototype.productElement__I__O = (function(x$1) {
+$c_Lmyreversi_models_player_Player$White$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lreversi_models_Color$White$.prototype.toString__T = (function() {
+$c_Lmyreversi_models_player_Player$White$.prototype.toString__T = (function() {
   return "White"
 });
-$c_Lreversi_models_Color$White$.prototype.hashCode__I = (function() {
+$c_Lmyreversi_models_player_Player$White$.prototype.hashCode__I = (function() {
   return 83549193
 });
-$c_Lreversi_models_Color$White$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lmyreversi_models_player_Player$White$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lreversi_models_Color$White$ = new $TypeData().initClass({
-  Lreversi_models_Color$White$: 0
-}, false, "reversi.models.Color$White$", {
-  Lreversi_models_Color$White$: 1,
-  Lreversi_models_Color: 1,
+var $d_Lmyreversi_models_player_Player$White$ = new $TypeData().initClass({
+  Lmyreversi_models_player_Player$White$: 0
+}, false, "myreversi.models.player.Player$White$", {
+  Lmyreversi_models_player_Player$White$: 1,
+  Lmyreversi_models_player_Player: 1,
   O: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_models_Color$White$.prototype.$classData = $d_Lreversi_models_Color$White$;
-var $n_Lreversi_models_Color$White$ = (void 0);
-var $m_Lreversi_models_Color$White$ = (function() {
-  if ((!$n_Lreversi_models_Color$White$)) {
-    $n_Lreversi_models_Color$White$ = new $c_Lreversi_models_Color$White$().init___()
+$c_Lmyreversi_models_player_Player$White$.prototype.$classData = $d_Lmyreversi_models_player_Player$White$;
+var $n_Lmyreversi_models_player_Player$White$ = (void 0);
+var $m_Lmyreversi_models_player_Player$White$ = (function() {
+  if ((!$n_Lmyreversi_models_player_Player$White$)) {
+    $n_Lmyreversi_models_player_Player$White$ = new $c_Lmyreversi_models_player_Player$White$().init___()
   };
-  return $n_Lreversi_models_Color$White$
+  return $n_Lmyreversi_models_player_Player$White$
 });
 /** @constructor */
-var $c_Lreversi_models_Player$Black$ = (function() {
-  $c_Lreversi_models_Player.call(this)
+var $c_Lmyreversi_models_shared_Color$Black$ = (function() {
+  $c_Lmyreversi_models_shared_Color.call(this)
 });
-$c_Lreversi_models_Player$Black$.prototype = new $h_Lreversi_models_Player();
-$c_Lreversi_models_Player$Black$.prototype.constructor = $c_Lreversi_models_Player$Black$;
+$c_Lmyreversi_models_shared_Color$Black$.prototype = new $h_Lmyreversi_models_shared_Color();
+$c_Lmyreversi_models_shared_Color$Black$.prototype.constructor = $c_Lmyreversi_models_shared_Color$Black$;
 /** @constructor */
-var $h_Lreversi_models_Player$Black$ = (function() {
+var $h_Lmyreversi_models_shared_Color$Black$ = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_Player$Black$.prototype = $c_Lreversi_models_Player$Black$.prototype;
-$c_Lreversi_models_Player$Black$.prototype.init___ = (function() {
-  $c_Lreversi_models_Player.prototype.init___Lreversi_models_Color.call(this, $m_Lreversi_models_Color$Black$());
-  $n_Lreversi_models_Player$Black$ = this;
+$h_Lmyreversi_models_shared_Color$Black$.prototype = $c_Lmyreversi_models_shared_Color$Black$.prototype;
+$c_Lmyreversi_models_shared_Color$Black$.prototype.init___ = (function() {
+  $c_Lmyreversi_models_shared_Color.prototype.init___T.call(this, "black");
+  $n_Lmyreversi_models_shared_Color$Black$ = this;
   return this
 });
-$c_Lreversi_models_Player$Black$.prototype.productPrefix__T = (function() {
+$c_Lmyreversi_models_shared_Color$Black$.prototype.productPrefix__T = (function() {
   return "Black"
 });
-$c_Lreversi_models_Player$Black$.prototype.productArity__I = (function() {
+$c_Lmyreversi_models_shared_Color$Black$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lreversi_models_Player$Black$.prototype.productElement__I__O = (function(x$1) {
+$c_Lmyreversi_models_shared_Color$Black$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lreversi_models_Player$Black$.prototype.toString__T = (function() {
+$c_Lmyreversi_models_shared_Color$Black$.prototype.toString__T = (function() {
   return "Black"
 });
-$c_Lreversi_models_Player$Black$.prototype.hashCode__I = (function() {
+$c_Lmyreversi_models_shared_Color$Black$.prototype.hashCode__I = (function() {
   return 64266207
 });
-$c_Lreversi_models_Player$Black$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lmyreversi_models_shared_Color$Black$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lreversi_models_Player$Black$ = new $TypeData().initClass({
-  Lreversi_models_Player$Black$: 0
-}, false, "reversi.models.Player$Black$", {
-  Lreversi_models_Player$Black$: 1,
-  Lreversi_models_Player: 1,
+var $d_Lmyreversi_models_shared_Color$Black$ = new $TypeData().initClass({
+  Lmyreversi_models_shared_Color$Black$: 0
+}, false, "myreversi.models.shared.Color$Black$", {
+  Lmyreversi_models_shared_Color$Black$: 1,
+  Lmyreversi_models_shared_Color: 1,
   O: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_models_Player$Black$.prototype.$classData = $d_Lreversi_models_Player$Black$;
-var $n_Lreversi_models_Player$Black$ = (void 0);
-var $m_Lreversi_models_Player$Black$ = (function() {
-  if ((!$n_Lreversi_models_Player$Black$)) {
-    $n_Lreversi_models_Player$Black$ = new $c_Lreversi_models_Player$Black$().init___()
+$c_Lmyreversi_models_shared_Color$Black$.prototype.$classData = $d_Lmyreversi_models_shared_Color$Black$;
+var $n_Lmyreversi_models_shared_Color$Black$ = (void 0);
+var $m_Lmyreversi_models_shared_Color$Black$ = (function() {
+  if ((!$n_Lmyreversi_models_shared_Color$Black$)) {
+    $n_Lmyreversi_models_shared_Color$Black$ = new $c_Lmyreversi_models_shared_Color$Black$().init___()
   };
-  return $n_Lreversi_models_Player$Black$
+  return $n_Lmyreversi_models_shared_Color$Black$
 });
 /** @constructor */
-var $c_Lreversi_models_Player$White$ = (function() {
-  $c_Lreversi_models_Player.call(this)
+var $c_Lmyreversi_models_shared_Color$White$ = (function() {
+  $c_Lmyreversi_models_shared_Color.call(this)
 });
-$c_Lreversi_models_Player$White$.prototype = new $h_Lreversi_models_Player();
-$c_Lreversi_models_Player$White$.prototype.constructor = $c_Lreversi_models_Player$White$;
+$c_Lmyreversi_models_shared_Color$White$.prototype = new $h_Lmyreversi_models_shared_Color();
+$c_Lmyreversi_models_shared_Color$White$.prototype.constructor = $c_Lmyreversi_models_shared_Color$White$;
 /** @constructor */
-var $h_Lreversi_models_Player$White$ = (function() {
+var $h_Lmyreversi_models_shared_Color$White$ = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_Player$White$.prototype = $c_Lreversi_models_Player$White$.prototype;
-$c_Lreversi_models_Player$White$.prototype.init___ = (function() {
-  $c_Lreversi_models_Player.prototype.init___Lreversi_models_Color.call(this, $m_Lreversi_models_Color$White$());
-  $n_Lreversi_models_Player$White$ = this;
+$h_Lmyreversi_models_shared_Color$White$.prototype = $c_Lmyreversi_models_shared_Color$White$.prototype;
+$c_Lmyreversi_models_shared_Color$White$.prototype.init___ = (function() {
+  $c_Lmyreversi_models_shared_Color.prototype.init___T.call(this, "white");
+  $n_Lmyreversi_models_shared_Color$White$ = this;
   return this
 });
-$c_Lreversi_models_Player$White$.prototype.productPrefix__T = (function() {
+$c_Lmyreversi_models_shared_Color$White$.prototype.productPrefix__T = (function() {
   return "White"
 });
-$c_Lreversi_models_Player$White$.prototype.productArity__I = (function() {
+$c_Lmyreversi_models_shared_Color$White$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lreversi_models_Player$White$.prototype.productElement__I__O = (function(x$1) {
+$c_Lmyreversi_models_shared_Color$White$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lreversi_models_Player$White$.prototype.toString__T = (function() {
+$c_Lmyreversi_models_shared_Color$White$.prototype.toString__T = (function() {
   return "White"
 });
-$c_Lreversi_models_Player$White$.prototype.hashCode__I = (function() {
+$c_Lmyreversi_models_shared_Color$White$.prototype.hashCode__I = (function() {
   return 83549193
 });
-$c_Lreversi_models_Player$White$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lmyreversi_models_shared_Color$White$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lreversi_models_Player$White$ = new $TypeData().initClass({
-  Lreversi_models_Player$White$: 0
-}, false, "reversi.models.Player$White$", {
-  Lreversi_models_Player$White$: 1,
-  Lreversi_models_Player: 1,
+var $d_Lmyreversi_models_shared_Color$White$ = new $TypeData().initClass({
+  Lmyreversi_models_shared_Color$White$: 0
+}, false, "myreversi.models.shared.Color$White$", {
+  Lmyreversi_models_shared_Color$White$: 1,
+  Lmyreversi_models_shared_Color: 1,
   O: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_models_Player$White$.prototype.$classData = $d_Lreversi_models_Player$White$;
-var $n_Lreversi_models_Player$White$ = (void 0);
-var $m_Lreversi_models_Player$White$ = (function() {
-  if ((!$n_Lreversi_models_Player$White$)) {
-    $n_Lreversi_models_Player$White$ = new $c_Lreversi_models_Player$White$().init___()
+$c_Lmyreversi_models_shared_Color$White$.prototype.$classData = $d_Lmyreversi_models_shared_Color$White$;
+var $n_Lmyreversi_models_shared_Color$White$ = (void 0);
+var $m_Lmyreversi_models_shared_Color$White$ = (function() {
+  if ((!$n_Lmyreversi_models_shared_Color$White$)) {
+    $n_Lmyreversi_models_shared_Color$White$ = new $c_Lmyreversi_models_shared_Color$White$().init___()
   };
-  return $n_Lreversi_models_Player$White$
+  return $n_Lmyreversi_models_shared_Color$White$
 });
 /** @constructor */
-var $c_Lreversi_service_exception_NotFoundReversibleReversiException = (function() {
-  $c_Lreversi_exception_ReversiException.call(this)
+var $c_Lmyreversi_service_exception_NotFoundReversibleReversiException = (function() {
+  $c_Lmyreversi_exception_ReversiException.call(this)
 });
-$c_Lreversi_service_exception_NotFoundReversibleReversiException.prototype = new $h_Lreversi_exception_ReversiException();
-$c_Lreversi_service_exception_NotFoundReversibleReversiException.prototype.constructor = $c_Lreversi_service_exception_NotFoundReversibleReversiException;
+$c_Lmyreversi_service_exception_NotFoundReversibleReversiException.prototype = new $h_Lmyreversi_exception_ReversiException();
+$c_Lmyreversi_service_exception_NotFoundReversibleReversiException.prototype.constructor = $c_Lmyreversi_service_exception_NotFoundReversibleReversiException;
 /** @constructor */
-var $h_Lreversi_service_exception_NotFoundReversibleReversiException = (function() {
+var $h_Lmyreversi_service_exception_NotFoundReversibleReversiException = (function() {
   /*<skip>*/
 });
-$h_Lreversi_service_exception_NotFoundReversibleReversiException.prototype = $c_Lreversi_service_exception_NotFoundReversibleReversiException.prototype;
-$c_Lreversi_service_exception_NotFoundReversibleReversiException.prototype.init___ = (function() {
-  $c_Lreversi_exception_ReversiException.prototype.init___T__jl_Throwable.call(this, null, null);
+$h_Lmyreversi_service_exception_NotFoundReversibleReversiException.prototype = $c_Lmyreversi_service_exception_NotFoundReversibleReversiException.prototype;
+$c_Lmyreversi_service_exception_NotFoundReversibleReversiException.prototype.init___ = (function() {
+  $c_Lmyreversi_exception_ReversiException.prototype.init___T__jl_Throwable.call(this, null, null);
   return this
 });
-var $is_Lreversi_service_exception_NotFoundReversibleReversiException = (function(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lreversi_service_exception_NotFoundReversibleReversiException)))
+var $is_Lmyreversi_service_exception_NotFoundReversibleReversiException = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmyreversi_service_exception_NotFoundReversibleReversiException)))
 });
-var $as_Lreversi_service_exception_NotFoundReversibleReversiException = (function(obj) {
-  return (($is_Lreversi_service_exception_NotFoundReversibleReversiException(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "reversi.service.exception.NotFoundReversibleReversiException"))
+var $as_Lmyreversi_service_exception_NotFoundReversibleReversiException = (function(obj) {
+  return (($is_Lmyreversi_service_exception_NotFoundReversibleReversiException(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "myreversi.service.exception.NotFoundReversibleReversiException"))
 });
-var $isArrayOf_Lreversi_service_exception_NotFoundReversibleReversiException = (function(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lreversi_service_exception_NotFoundReversibleReversiException)))
+var $isArrayOf_Lmyreversi_service_exception_NotFoundReversibleReversiException = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmyreversi_service_exception_NotFoundReversibleReversiException)))
 });
-var $asArrayOf_Lreversi_service_exception_NotFoundReversibleReversiException = (function(obj, depth) {
-  return (($isArrayOf_Lreversi_service_exception_NotFoundReversibleReversiException(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lreversi.service.exception.NotFoundReversibleReversiException;", depth))
+var $asArrayOf_Lmyreversi_service_exception_NotFoundReversibleReversiException = (function(obj, depth) {
+  return (($isArrayOf_Lmyreversi_service_exception_NotFoundReversibleReversiException(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmyreversi.service.exception.NotFoundReversibleReversiException;", depth))
 });
-var $d_Lreversi_service_exception_NotFoundReversibleReversiException = new $TypeData().initClass({
-  Lreversi_service_exception_NotFoundReversibleReversiException: 0
-}, false, "reversi.service.exception.NotFoundReversibleReversiException", {
-  Lreversi_service_exception_NotFoundReversibleReversiException: 1,
-  Lreversi_exception_ReversiException: 1,
+var $d_Lmyreversi_service_exception_NotFoundReversibleReversiException = new $TypeData().initClass({
+  Lmyreversi_service_exception_NotFoundReversibleReversiException: 0
+}, false, "myreversi.service.exception.NotFoundReversibleReversiException", {
+  Lmyreversi_service_exception_NotFoundReversibleReversiException: 1,
+  Lmyreversi_exception_ReversiException: 1,
   jl_RuntimeException: 1,
   jl_Exception: 1,
   jl_Throwable: 1,
   O: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_service_exception_NotFoundReversibleReversiException.prototype.$classData = $d_Lreversi_service_exception_NotFoundReversibleReversiException;
+$c_Lmyreversi_service_exception_NotFoundReversibleReversiException.prototype.$classData = $d_Lmyreversi_service_exception_NotFoundReversibleReversiException;
 /** @constructor */
-var $c_Lreversi_views_BoardView = (function() {
+var $c_Lmyreversi_views_BoardView = (function() {
   $c_O.call(this);
   this.board$1 = null;
   this.elem$1 = null
 });
-$c_Lreversi_views_BoardView.prototype = new $h_O();
-$c_Lreversi_views_BoardView.prototype.constructor = $c_Lreversi_views_BoardView;
+$c_Lmyreversi_views_BoardView.prototype = new $h_O();
+$c_Lmyreversi_views_BoardView.prototype.constructor = $c_Lmyreversi_views_BoardView;
 /** @constructor */
-var $h_Lreversi_views_BoardView = (function() {
+var $h_Lmyreversi_views_BoardView = (function() {
   /*<skip>*/
 });
-$h_Lreversi_views_BoardView.prototype = $c_Lreversi_views_BoardView.prototype;
-$c_Lreversi_views_BoardView.prototype.productPrefix__T = (function() {
+$h_Lmyreversi_views_BoardView.prototype = $c_Lmyreversi_views_BoardView.prototype;
+$c_Lmyreversi_views_BoardView.prototype.productPrefix__T = (function() {
   return "BoardView"
 });
-$c_Lreversi_views_BoardView.prototype.productArity__I = (function() {
+$c_Lmyreversi_views_BoardView.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lreversi_views_BoardView.prototype.equals__O__Z = (function(x$1) {
+$c_Lmyreversi_views_BoardView.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lreversi_views_BoardView(x$1)) {
-    var BoardView$1 = $as_Lreversi_views_BoardView(x$1);
+  } else if ($is_Lmyreversi_views_BoardView(x$1)) {
+    var BoardView$1 = $as_Lmyreversi_views_BoardView(x$1);
     var x = this.board$1;
     var x$2 = BoardView$1.board$1;
     return ((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))
@@ -10256,7 +10256,7 @@ $c_Lreversi_views_BoardView.prototype.equals__O__Z = (function(x$1) {
     return false
   }
 });
-$c_Lreversi_views_BoardView.prototype.productElement__I__O = (function(x$1) {
+$c_Lmyreversi_views_BoardView.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.board$1;
@@ -10267,16 +10267,16 @@ $c_Lreversi_views_BoardView.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lreversi_views_BoardView.prototype.toString__T = (function() {
+$c_Lmyreversi_views_BoardView.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lreversi_views_BoardView.prototype.render__Lorg_scalajs_jquery_JQuery = (function() {
+$c_Lmyreversi_views_BoardView.prototype.render__Lorg_scalajs_jquery_JQuery = (function() {
   var end = this.board$1.edge$1;
   var isEmpty$4 = (end < 1);
   var numRangeElements$4 = (isEmpty$4 ? 0 : end);
   var lastElement$4 = (isEmpty$4 ? 0 : end);
   var terminalElement$4 = ((1 + lastElement$4) | 0);
-  var f = new $c_Lreversi_views_BoardView$$anonfun$1().init___Lreversi_views_BoardView(this);
+  var f = new $c_Lmyreversi_views_BoardView$$anonfun$1().init___Lmyreversi_views_BoardView(this);
   $m_sci_IndexedSeq$();
   $m_sc_IndexedSeq$();
   $m_sci_IndexedSeq$();
@@ -10318,73 +10318,67 @@ $c_Lreversi_views_BoardView.prototype.render__Lorg_scalajs_jquery_JQuery = (func
   jsx$3["apply"](jsx$1, jsx$2);
   return this.elem$1
 });
-$c_Lreversi_views_BoardView.prototype.hashCode__I = (function() {
+$c_Lmyreversi_views_BoardView.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-$c_Lreversi_views_BoardView.prototype.productIterator__sc_Iterator = (function() {
+$c_Lmyreversi_views_BoardView.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-$c_Lreversi_views_BoardView.prototype.init___Lreversi_models_Board = (function(board) {
+$c_Lmyreversi_views_BoardView.prototype.init___Lmyreversi_models_reversi_Board = (function(board) {
   this.board$1 = board;
   this.elem$1 = (0, $g["jQuery"])(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["<table class=\"board\" />"])).s__sc_Seq__T($m_sci_Nil$()));
   return this
 });
-var $is_Lreversi_views_BoardView = (function(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lreversi_views_BoardView)))
+var $is_Lmyreversi_views_BoardView = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmyreversi_views_BoardView)))
 });
-var $as_Lreversi_views_BoardView = (function(obj) {
-  return (($is_Lreversi_views_BoardView(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "reversi.views.BoardView"))
+var $as_Lmyreversi_views_BoardView = (function(obj) {
+  return (($is_Lmyreversi_views_BoardView(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "myreversi.views.BoardView"))
 });
-var $isArrayOf_Lreversi_views_BoardView = (function(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lreversi_views_BoardView)))
+var $isArrayOf_Lmyreversi_views_BoardView = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmyreversi_views_BoardView)))
 });
-var $asArrayOf_Lreversi_views_BoardView = (function(obj, depth) {
-  return (($isArrayOf_Lreversi_views_BoardView(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lreversi.views.BoardView;", depth))
+var $asArrayOf_Lmyreversi_views_BoardView = (function(obj, depth) {
+  return (($isArrayOf_Lmyreversi_views_BoardView(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmyreversi.views.BoardView;", depth))
 });
-var $d_Lreversi_views_BoardView = new $TypeData().initClass({
-  Lreversi_views_BoardView: 0
-}, false, "reversi.views.BoardView", {
-  Lreversi_views_BoardView: 1,
+var $d_Lmyreversi_views_BoardView = new $TypeData().initClass({
+  Lmyreversi_views_BoardView: 0
+}, false, "myreversi.views.BoardView", {
+  Lmyreversi_views_BoardView: 1,
   O: 1,
-  Lreversi_views_View: 1,
+  Lmyreversi_views_View: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_views_BoardView.prototype.$classData = $d_Lreversi_views_BoardView;
+$c_Lmyreversi_views_BoardView.prototype.$classData = $d_Lmyreversi_views_BoardView;
 /** @constructor */
-var $c_Lreversi_views_CellView = (function() {
+var $c_Lmyreversi_views_CellView = (function() {
   $c_O.call(this);
   this.cell$1 = null;
   this.board$1 = null;
   this.elem$1 = null
 });
-$c_Lreversi_views_CellView.prototype = new $h_O();
-$c_Lreversi_views_CellView.prototype.constructor = $c_Lreversi_views_CellView;
+$c_Lmyreversi_views_CellView.prototype = new $h_O();
+$c_Lmyreversi_views_CellView.prototype.constructor = $c_Lmyreversi_views_CellView;
 /** @constructor */
-var $h_Lreversi_views_CellView = (function() {
+var $h_Lmyreversi_views_CellView = (function() {
   /*<skip>*/
 });
-$h_Lreversi_views_CellView.prototype = $c_Lreversi_views_CellView.prototype;
-$c_Lreversi_views_CellView.prototype.productPrefix__T = (function() {
+$h_Lmyreversi_views_CellView.prototype = $c_Lmyreversi_views_CellView.prototype;
+$c_Lmyreversi_views_CellView.prototype.productPrefix__T = (function() {
   return "CellView"
 });
-$c_Lreversi_views_CellView.prototype.productArity__I = (function() {
+$c_Lmyreversi_views_CellView.prototype.productArity__I = (function() {
   return 2
 });
-$c_Lreversi_views_CellView.prototype.init___Lreversi_models_Cell__Lreversi_models_Board = (function(cell, board) {
-  this.cell$1 = cell;
-  this.board$1 = board;
-  this.elem$1 = (0, $g["jQuery"])(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["<td class=\"cell\"></td>"])).s__sc_Seq__T($m_sci_Nil$()));
-  return this
-});
-$c_Lreversi_views_CellView.prototype.equals__O__Z = (function(x$1) {
+$c_Lmyreversi_views_CellView.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lreversi_views_CellView(x$1)) {
-    var CellView$1 = $as_Lreversi_views_CellView(x$1);
+  } else if ($is_Lmyreversi_views_CellView(x$1)) {
+    var CellView$1 = $as_Lmyreversi_views_CellView(x$1);
     var x = this.cell$1;
     var x$2 = CellView$1.cell$1;
     if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
@@ -10398,7 +10392,7 @@ $c_Lreversi_views_CellView.prototype.equals__O__Z = (function(x$1) {
     return false
   }
 });
-$c_Lreversi_views_CellView.prototype.productElement__I__O = (function(x$1) {
+$c_Lmyreversi_views_CellView.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.cell$1;
@@ -10413,53 +10407,54 @@ $c_Lreversi_views_CellView.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lreversi_views_CellView.prototype.toString__T = (function() {
+$c_Lmyreversi_views_CellView.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lreversi_views_CellView.prototype.render__Lorg_scalajs_jquery_JQuery = (function() {
-  var player = this.board$1.player$1;
-  var elemWithCandidates = this.renderCandidates__p1__Lorg_scalajs_jquery_JQuery__Lreversi_models_Player__Lorg_scalajs_jquery_JQuery(this.elem$1, player);
-  return this.renderReversi__p1__Lorg_scalajs_jquery_JQuery__Lreversi_models_Player__Lorg_scalajs_jquery_JQuery(elemWithCandidates, player)
+$c_Lmyreversi_views_CellView.prototype.init___Lmyreversi_models_reversi_Cell__Lmyreversi_models_reversi_Board = (function(cell, board) {
+  this.cell$1 = cell;
+  this.board$1 = board;
+  this.elem$1 = (0, $g["jQuery"])(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["<td class=\"cell\"></td>"])).s__sc_Seq__T($m_sci_Nil$()));
+  return this
 });
-$c_Lreversi_views_CellView.prototype.renderReversi__p1__Lorg_scalajs_jquery_JQuery__Lreversi_models_Player__Lorg_scalajs_jquery_JQuery = (function(elem, currentPlayer) {
+$c_Lmyreversi_views_CellView.prototype.renderReversi__p1__Lorg_scalajs_jquery_JQuery__Lmyreversi_models_player_Player__Lorg_scalajs_jquery_JQuery = (function(elem, currentPlayer) {
   var x1 = this.cell$1.reversi$1;
   if ($is_s_Some(x1)) {
     var x2 = $as_s_Some(x1);
-    var r = $as_Lreversi_models_Reversi(x2.x$2);
-    elem["append"](new $c_Lreversi_views_ReversiView().init___Lreversi_models_Reversi(r).render__Lorg_scalajs_jquery_JQuery())
+    var r = $as_Lmyreversi_models_reversi_Reversi(x2.x$2);
+    elem["append"](new $c_Lmyreversi_views_ReversiView().init___Lmyreversi_models_reversi_Reversi(r).render__Lorg_scalajs_jquery_JQuery())
   } else {
     var x = $m_s_None$();
     if ((x === x1)) {
       elem["click"]((function(arg$outer, currentPlayer$1) {
         return (function(e$3) {
           e$3["stopPropagation"]();
-          var reversi = new $c_Lreversi_models_Reversi().init___Lreversi_models_Color(currentPlayer$1.color$1);
+          var reversi = new $c_Lmyreversi_models_reversi_Reversi().init___Lmyreversi_models_shared_Color(currentPlayer$1.color$1);
           var rc7 = false;
           var x2$1 = null;
           var this$1 = arg$outer.board$1.cellCollection$1;
           var p = arg$outer.cell$1.point$1;
-          var x1$1 = $m_Lreversi_service_ReversiCalculatorService$().addReversi__Lreversi_models_Reversi__Lreversi_models_Point__Lreversi_models_CellCollection__s_util_Try(reversi, p, this$1);
+          var x1$1 = $m_Lmyreversi_service_ReversiCalculatorService$().addReversi__Lmyreversi_models_reversi_Reversi__Lmyreversi_models_shared_Point__Lmyreversi_models_reversi_CellCollection__s_util_Try(reversi, p, this$1);
           matchEnd8: {
             if ($is_s_util_Failure(x1$1)) {
               rc7 = true;
               x2$1 = $as_s_util_Failure(x1$1);
               var e$2 = x2$1.exception$2;
-              if ($is_Lreversi_service_exception_NotFoundReversibleReversiException(e$2)) {
+              if ($is_Lmyreversi_service_exception_NotFoundReversibleReversiException(e$2)) {
                 break matchEnd8
               }
             };
             if (rc7) {
               var throwable = x2$1.exception$2;
-              throw new $c_Lreversi_exception_UnknownException().init___T__jl_Throwable(null, throwable)
+              throw new $c_Lmyreversi_exception_UnknownException().init___T__jl_Throwable(null, throwable)
             };
             if ($is_s_util_Success(x1$1)) {
               var x4 = $as_s_util_Success(x1$1);
-              var newCellCollection = $as_Lreversi_models_CellCollection(x4.value$2);
-              var jsx$1 = $m_Lreversi_ReversiApp$();
-              var x$4 = currentPlayer$1.opposite__Lreversi_models_Player();
+              var newCellCollection = $as_Lmyreversi_models_reversi_CellCollection(x4.value$2);
+              var jsx$1 = $m_Lmyreversi_ReversiApp$();
+              var x$4 = currentPlayer$1.opposite__Lmyreversi_models_player_Player();
               var this$2 = arg$outer.board$1;
               var x$5 = this$2.edge$1;
-              jsx$1.refresh__Lreversi_models_Board__V(new $c_Lreversi_models_Board().init___I__Lreversi_models_CellCollection__Lreversi_models_Player(x$5, newCellCollection, x$4));
+              jsx$1.refresh__Lmyreversi_models_reversi_Board__V(new $c_Lmyreversi_models_reversi_Board().init___I__Lmyreversi_models_reversi_CellCollection__Lmyreversi_models_player_Player(x$5, newCellCollection, x$4));
               break matchEnd8
             };
             throw new $c_s_MatchError().init___O(x1$1)
@@ -10472,10 +10467,10 @@ $c_Lreversi_views_CellView.prototype.renderReversi__p1__Lorg_scalajs_jquery_JQue
   };
   return elem
 });
-$c_Lreversi_views_CellView.prototype.renderCandidates__p1__Lorg_scalajs_jquery_JQuery__Lreversi_models_Player__Lorg_scalajs_jquery_JQuery = (function(elem, currentPlayer) {
+$c_Lmyreversi_views_CellView.prototype.renderCandidates__p1__Lorg_scalajs_jquery_JQuery__Lmyreversi_models_player_Player__Lorg_scalajs_jquery_JQuery = (function(elem, currentPlayer) {
   var cellCollection = this.board$1.cellCollection$1;
   var color = currentPlayer.color$1;
-  var points = $s_Lreversi_models_CellCollection$class__candidates__Lreversi_models_CellCollection__Lreversi_models_Color__sc_Seq(cellCollection, color);
+  var points = $s_Lmyreversi_models_reversi_CellCollection$class__candidates__Lmyreversi_models_reversi_CellCollection__Lmyreversi_models_shared_Color__sc_Seq(cellCollection, color);
   var x1 = this.cell$1;
   matchEnd4: {
     if ((x1 !== null)) {
@@ -10490,66 +10485,66 @@ $c_Lreversi_views_CellView.prototype.renderCandidates__p1__Lorg_scalajs_jquery_J
   };
   return elem
 });
-$c_Lreversi_views_CellView.prototype.hashCode__I = (function() {
+$c_Lmyreversi_views_CellView.prototype.render__Lorg_scalajs_jquery_JQuery = (function() {
+  var player = this.board$1.player$1;
+  var elemWithCandidates = this.renderCandidates__p1__Lorg_scalajs_jquery_JQuery__Lmyreversi_models_player_Player__Lorg_scalajs_jquery_JQuery(this.elem$1, player);
+  return this.renderReversi__p1__Lorg_scalajs_jquery_JQuery__Lmyreversi_models_player_Player__Lorg_scalajs_jquery_JQuery(elemWithCandidates, player)
+});
+$c_Lmyreversi_views_CellView.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-$c_Lreversi_views_CellView.prototype.productIterator__sc_Iterator = (function() {
+$c_Lmyreversi_views_CellView.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $is_Lreversi_views_CellView = (function(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lreversi_views_CellView)))
+var $is_Lmyreversi_views_CellView = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmyreversi_views_CellView)))
 });
-var $as_Lreversi_views_CellView = (function(obj) {
-  return (($is_Lreversi_views_CellView(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "reversi.views.CellView"))
+var $as_Lmyreversi_views_CellView = (function(obj) {
+  return (($is_Lmyreversi_views_CellView(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "myreversi.views.CellView"))
 });
-var $isArrayOf_Lreversi_views_CellView = (function(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lreversi_views_CellView)))
+var $isArrayOf_Lmyreversi_views_CellView = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmyreversi_views_CellView)))
 });
-var $asArrayOf_Lreversi_views_CellView = (function(obj, depth) {
-  return (($isArrayOf_Lreversi_views_CellView(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lreversi.views.CellView;", depth))
+var $asArrayOf_Lmyreversi_views_CellView = (function(obj, depth) {
+  return (($isArrayOf_Lmyreversi_views_CellView(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmyreversi.views.CellView;", depth))
 });
-var $d_Lreversi_views_CellView = new $TypeData().initClass({
-  Lreversi_views_CellView: 0
-}, false, "reversi.views.CellView", {
-  Lreversi_views_CellView: 1,
+var $d_Lmyreversi_views_CellView = new $TypeData().initClass({
+  Lmyreversi_views_CellView: 0
+}, false, "myreversi.views.CellView", {
+  Lmyreversi_views_CellView: 1,
   O: 1,
-  Lreversi_views_View: 1,
+  Lmyreversi_views_View: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_views_CellView.prototype.$classData = $d_Lreversi_views_CellView;
+$c_Lmyreversi_views_CellView.prototype.$classData = $d_Lmyreversi_views_CellView;
 /** @constructor */
-var $c_Lreversi_views_ReversiView = (function() {
+var $c_Lmyreversi_views_ReversiView = (function() {
   $c_O.call(this);
   this.reversi$1 = null;
   this.elem$1 = null
 });
-$c_Lreversi_views_ReversiView.prototype = new $h_O();
-$c_Lreversi_views_ReversiView.prototype.constructor = $c_Lreversi_views_ReversiView;
+$c_Lmyreversi_views_ReversiView.prototype = new $h_O();
+$c_Lmyreversi_views_ReversiView.prototype.constructor = $c_Lmyreversi_views_ReversiView;
 /** @constructor */
-var $h_Lreversi_views_ReversiView = (function() {
+var $h_Lmyreversi_views_ReversiView = (function() {
   /*<skip>*/
 });
-$h_Lreversi_views_ReversiView.prototype = $c_Lreversi_views_ReversiView.prototype;
-$c_Lreversi_views_ReversiView.prototype.productPrefix__T = (function() {
+$h_Lmyreversi_views_ReversiView.prototype = $c_Lmyreversi_views_ReversiView.prototype;
+$c_Lmyreversi_views_ReversiView.prototype.productPrefix__T = (function() {
   return "ReversiView"
 });
-$c_Lreversi_views_ReversiView.prototype.productArity__I = (function() {
+$c_Lmyreversi_views_ReversiView.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lreversi_views_ReversiView.prototype.init___Lreversi_models_Reversi = (function(reversi) {
-  this.reversi$1 = reversi;
-  this.elem$1 = (0, $g["jQuery"])(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["<div class=\"reversi\"></div>"])).s__sc_Seq__T($m_sci_Nil$()));
-  return this
-});
-$c_Lreversi_views_ReversiView.prototype.equals__O__Z = (function(x$1) {
+$c_Lmyreversi_views_ReversiView.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lreversi_views_ReversiView(x$1)) {
-    var ReversiView$1 = $as_Lreversi_views_ReversiView(x$1);
+  } else if ($is_Lmyreversi_views_ReversiView(x$1)) {
+    var ReversiView$1 = $as_Lmyreversi_views_ReversiView(x$1);
     var x = this.reversi$1;
     var x$2 = ReversiView$1.reversi$1;
     return ((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))
@@ -10557,7 +10552,7 @@ $c_Lreversi_views_ReversiView.prototype.equals__O__Z = (function(x$1) {
     return false
   }
 });
-$c_Lreversi_views_ReversiView.prototype.productElement__I__O = (function(x$1) {
+$c_Lmyreversi_views_ReversiView.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.reversi$1;
@@ -10568,44 +10563,49 @@ $c_Lreversi_views_ReversiView.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lreversi_views_ReversiView.prototype.toString__T = (function() {
+$c_Lmyreversi_views_ReversiView.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lreversi_views_ReversiView.prototype.render__Lorg_scalajs_jquery_JQuery = (function() {
+$c_Lmyreversi_views_ReversiView.prototype.render__Lorg_scalajs_jquery_JQuery = (function() {
   this.elem$1["addClass"](this.reversi$1.color$1.code$1);
   return this.elem$1
 });
-$c_Lreversi_views_ReversiView.prototype.hashCode__I = (function() {
+$c_Lmyreversi_views_ReversiView.prototype.init___Lmyreversi_models_reversi_Reversi = (function(reversi) {
+  this.reversi$1 = reversi;
+  this.elem$1 = (0, $g["jQuery"])(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["<div class=\"reversi\"></div>"])).s__sc_Seq__T($m_sci_Nil$()));
+  return this
+});
+$c_Lmyreversi_views_ReversiView.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-$c_Lreversi_views_ReversiView.prototype.productIterator__sc_Iterator = (function() {
+$c_Lmyreversi_views_ReversiView.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $is_Lreversi_views_ReversiView = (function(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lreversi_views_ReversiView)))
+var $is_Lmyreversi_views_ReversiView = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmyreversi_views_ReversiView)))
 });
-var $as_Lreversi_views_ReversiView = (function(obj) {
-  return (($is_Lreversi_views_ReversiView(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "reversi.views.ReversiView"))
+var $as_Lmyreversi_views_ReversiView = (function(obj) {
+  return (($is_Lmyreversi_views_ReversiView(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "myreversi.views.ReversiView"))
 });
-var $isArrayOf_Lreversi_views_ReversiView = (function(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lreversi_views_ReversiView)))
+var $isArrayOf_Lmyreversi_views_ReversiView = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmyreversi_views_ReversiView)))
 });
-var $asArrayOf_Lreversi_views_ReversiView = (function(obj, depth) {
-  return (($isArrayOf_Lreversi_views_ReversiView(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lreversi.views.ReversiView;", depth))
+var $asArrayOf_Lmyreversi_views_ReversiView = (function(obj, depth) {
+  return (($isArrayOf_Lmyreversi_views_ReversiView(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmyreversi.views.ReversiView;", depth))
 });
-var $d_Lreversi_views_ReversiView = new $TypeData().initClass({
-  Lreversi_views_ReversiView: 0
-}, false, "reversi.views.ReversiView", {
-  Lreversi_views_ReversiView: 1,
+var $d_Lmyreversi_views_ReversiView = new $TypeData().initClass({
+  Lmyreversi_views_ReversiView: 0
+}, false, "myreversi.views.ReversiView", {
+  Lmyreversi_views_ReversiView: 1,
   O: 1,
-  Lreversi_views_View: 1,
+  Lmyreversi_views_View: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lreversi_views_ReversiView.prototype.$classData = $d_Lreversi_views_ReversiView;
+$c_Lmyreversi_views_ReversiView.prototype.$classData = $d_Lmyreversi_views_ReversiView;
 /** @constructor */
 var $c_T2 = (function() {
   $c_O.call(this);
@@ -13282,17 +13282,17 @@ var $isArrayOf_sc_Seq = (function(obj, depth) {
 var $asArrayOf_sc_Seq = (function(obj, depth) {
   return (($isArrayOf_sc_Seq(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.Seq;", depth))
 });
-var $is_Lreversi_models_CellCollection = (function(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lreversi_models_CellCollection)))
+var $is_Lmyreversi_models_reversi_CellCollection = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmyreversi_models_reversi_CellCollection)))
 });
-var $as_Lreversi_models_CellCollection = (function(obj) {
-  return (($is_Lreversi_models_CellCollection(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "reversi.models.CellCollection"))
+var $as_Lmyreversi_models_reversi_CellCollection = (function(obj) {
+  return (($is_Lmyreversi_models_reversi_CellCollection(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "myreversi.models.reversi.CellCollection"))
 });
-var $isArrayOf_Lreversi_models_CellCollection = (function(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lreversi_models_CellCollection)))
+var $isArrayOf_Lmyreversi_models_reversi_CellCollection = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmyreversi_models_reversi_CellCollection)))
 });
-var $asArrayOf_Lreversi_models_CellCollection = (function(obj, depth) {
-  return (($isArrayOf_Lreversi_models_CellCollection(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lreversi.models.CellCollection;", depth))
+var $asArrayOf_Lmyreversi_models_reversi_CellCollection = (function(obj, depth) {
+  return (($isArrayOf_Lmyreversi_models_reversi_CellCollection(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmyreversi.models.reversi.CellCollection;", depth))
 });
 var $is_sc_Set = (function(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.sc_Set)))
@@ -13354,124 +13354,124 @@ var $asArrayOf_sc_LinearSeq = (function(obj, depth) {
   return (($isArrayOf_sc_LinearSeq(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.LinearSeq;", depth))
 });
 /** @constructor */
-var $c_Lreversi_models_CellCollection$$anon$1 = (function() {
+var $c_Lmyreversi_models_reversi_CellCollection$$anon$1 = (function() {
   $c_O.call(this);
   this.cells$1$1 = null;
-  this.reversi$models$CellCollection$$$undcandidates$1 = null;
+  this.myreversi$models$reversi$CellCollection$$$undcandidates$1 = null;
   this.bitmap$0$1 = false
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype = new $h_O();
-$c_Lreversi_models_CellCollection$$anon$1.prototype.constructor = $c_Lreversi_models_CellCollection$$anon$1;
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype = new $h_O();
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.constructor = $c_Lmyreversi_models_reversi_CellCollection$$anon$1;
 /** @constructor */
-var $h_Lreversi_models_CellCollection$$anon$1 = (function() {
+var $h_Lmyreversi_models_reversi_CellCollection$$anon$1 = (function() {
   /*<skip>*/
 });
-$h_Lreversi_models_CellCollection$$anon$1.prototype = $c_Lreversi_models_CellCollection$$anon$1.prototype;
-$c_Lreversi_models_CellCollection$$anon$1.prototype.seq__sc_TraversableOnce = (function() {
+$h_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype = $c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype;
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.myreversi$models$reversi$CellCollection$$$undcandidates$lzycompute__p1__sci_Map = (function() {
+  if ((!this.bitmap$0$1)) {
+    this.myreversi$models$reversi$CellCollection$$$undcandidates$1 = $s_Lmyreversi_models_reversi_CellCollection$class__myreversi$models$reversi$CellCollection$$$undcandidates__Lmyreversi_models_reversi_CellCollection__sci_Map(this);
+    this.bitmap$0$1 = true
+  };
+  return this.myreversi$models$reversi$CellCollection$$$undcandidates$1
+});
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.seq__sc_TraversableOnce = (function() {
   return this
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.apply__I__O = (function(idx) {
-  return this.apply__I__Lreversi_models_Cell(idx)
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.apply__I__Lmyreversi_models_reversi_Cell = (function(idx) {
+  return $as_Lmyreversi_models_reversi_Cell(this.cells$1$1.apply__I__O(idx))
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.lengthCompare__I__I = (function(len) {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.apply__I__O = (function(idx) {
+  return this.apply__I__Lmyreversi_models_reversi_Cell(idx)
+});
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.lengthCompare__I__I = (function(len) {
   return $s_sc_SeqLike$class__lengthCompare__sc_SeqLike__I__I(this, len)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.sameElements__sc_GenIterable__Z = (function(that) {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.apply__O__O = (function(v1) {
+  return this.apply__I__Lmyreversi_models_reversi_Cell($uI(v1))
+});
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.sameElements__sc_GenIterable__Z = (function(that) {
   return $s_sc_IterableLike$class__sameElements__sc_IterableLike__sc_GenIterable__Z(this, that)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.apply__O__O = (function(v1) {
-  return this.apply__I__Lreversi_models_Cell($uI(v1))
-});
-$c_Lreversi_models_CellCollection$$anon$1.prototype.exists__F1__Z = (function(p) {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.exists__F1__Z = (function(p) {
   var this$1 = this.iterator__sc_Iterator();
   return $s_sc_Iterator$class__exists__sc_Iterator__F1__Z(this$1, p)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.isEmpty__Z = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.isEmpty__Z = (function() {
   return $s_sc_SeqLike$class__isEmpty__sc_SeqLike__Z(this)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.thisCollection__sc_Traversable = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.thisCollection__sc_Traversable = (function() {
   return this
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.flatMap__F1__scg_CanBuildFrom__O = (function(f, bf) {
-  return $s_sc_TraversableLike$class__flatMap__sc_TraversableLike__F1__scg_CanBuildFrom__O(this, f, bf)
-});
-$c_Lreversi_models_CellCollection$$anon$1.prototype.equals__O__Z = (function(that) {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.equals__O__Z = (function(that) {
   return $s_sc_GenSeqLike$class__equals__sc_GenSeqLike__O__Z(this, that)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.mkString__T__T__T__T = (function(start, sep, end) {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.flatMap__F1__scg_CanBuildFrom__O = (function(f, bf) {
+  return $s_sc_TraversableLike$class__flatMap__sc_TraversableLike__F1__scg_CanBuildFrom__O(this, f, bf)
+});
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $s_sc_TraversableOnce$class__mkString__sc_TraversableOnce__T__T__T__T(this, start, sep, end)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.companion__scg_GenericCompanion = (function() {
-  return $m_sc_Seq$()
-});
-$c_Lreversi_models_CellCollection$$anon$1.prototype.toString__T = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.toString__T = (function() {
   return $s_sc_TraversableLike$class__toString__sc_TraversableLike__T(this)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.foreach__F1__V = (function(f) {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.companion__scg_GenericCompanion = (function() {
+  return $m_sc_Seq$()
+});
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.foreach__F1__V = (function(f) {
   var this$1 = this.iterator__sc_Iterator();
   $s_sc_Iterator$class__foreach__sc_Iterator__F1__V(this$1, f)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.reverse__O = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.myreversi$models$reversi$CellCollection$$$undcandidates__sci_Map = (function() {
+  return ((!this.bitmap$0$1) ? this.myreversi$models$reversi$CellCollection$$$undcandidates$lzycompute__p1__sci_Map() : this.myreversi$models$reversi$CellCollection$$$undcandidates$1)
+});
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.reverse__O = (function() {
   return $s_sc_SeqLike$class__reverse__sc_SeqLike__O(this)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.size__I = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.size__I = (function() {
   return this.length__I()
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.apply__I__Lreversi_models_Cell = (function(idx) {
-  return $as_Lreversi_models_Cell(this.cells$1$1.apply__I__O(idx))
-});
-$c_Lreversi_models_CellCollection$$anon$1.prototype.iterator__sc_Iterator = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.iterator__sc_Iterator = (function() {
   return this.cells$1$1.iterator__sc_Iterator()
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.length__I = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.length__I = (function() {
   return this.cells$1$1.length__I()
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.reversi$models$CellCollection$$$undcandidates$lzycompute__p1__sci_Map = (function() {
-  if ((!this.bitmap$0$1)) {
-    this.reversi$models$CellCollection$$$undcandidates$1 = $s_Lreversi_models_CellCollection$class__reversi$models$CellCollection$$$undcandidates__Lreversi_models_CellCollection__sci_Map(this);
-    this.bitmap$0$1 = true
-  };
-  return this.reversi$models$CellCollection$$$undcandidates$1
-});
-$c_Lreversi_models_CellCollection$$anon$1.prototype.toStream__sci_Stream = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.toStream__sci_Stream = (function() {
   return this.iterator__sc_Iterator().toStream__sci_Stream()
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.contains__O__Z = (function(elem) {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.contains__O__Z = (function(elem) {
   return $s_sc_SeqLike$class__contains__sc_SeqLike__O__Z(this, elem)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = (function(b, start, sep, end) {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = (function(b, start, sep, end) {
   return $s_sc_TraversableOnce$class__addString__sc_TraversableOnce__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.repr__O = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.repr__O = (function() {
   return this
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.init___sc_Seq = (function(cells$1) {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.init___sc_Seq = (function(cells$1) {
   this.cells$1$1 = cells$1;
   return this
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.hashCode__I = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.hashCode__I = (function() {
   return $m_s_util_hashing_MurmurHash3$().seqHash__sc_Seq__I(this)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.reversi$models$CellCollection$$$undcandidates__sci_Map = (function() {
-  return ((!this.bitmap$0$1) ? this.reversi$models$CellCollection$$$undcandidates$lzycompute__p1__sci_Map() : this.reversi$models$CellCollection$$$undcandidates$1)
-});
-$c_Lreversi_models_CellCollection$$anon$1.prototype.toCollection__O__sc_Seq = (function(repr) {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.toCollection__O__sc_Seq = (function(repr) {
   return $as_sc_Seq(repr)
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.newBuilder__scm_Builder = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.newBuilder__scm_Builder = (function() {
   $m_sc_Seq$();
   $m_sci_Seq$();
   return new $c_scm_ListBuffer().init___()
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.stringPrefix__T = (function() {
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.stringPrefix__T = (function() {
   return $s_sc_TraversableLike$class__stringPrefix__sc_TraversableLike__T(this)
 });
-var $d_Lreversi_models_CellCollection$$anon$1 = new $TypeData().initClass({
-  Lreversi_models_CellCollection$$anon$1: 0
-}, false, "reversi.models.CellCollection$$anon$1", {
-  Lreversi_models_CellCollection$$anon$1: 1,
+var $d_Lmyreversi_models_reversi_CellCollection$$anon$1 = new $TypeData().initClass({
+  Lmyreversi_models_reversi_CellCollection$$anon$1: 0
+}, false, "myreversi.models.reversi.CellCollection$$anon$1", {
+  Lmyreversi_models_reversi_CellCollection$$anon$1: 1,
   O: 1,
-  Lreversi_models_CellCollection: 1,
+  Lmyreversi_models_reversi_CellCollection: 1,
   sc_Seq: 1,
   s_PartialFunction: 1,
   F1: 1,
@@ -13494,7 +13494,7 @@ var $d_Lreversi_models_CellCollection$$anon$1 = new $TypeData().initClass({
   sc_GenSeqLike: 1,
   sc_SeqLike: 1
 });
-$c_Lreversi_models_CellCollection$$anon$1.prototype.$classData = $d_Lreversi_models_CellCollection$$anon$1;
+$c_Lmyreversi_models_reversi_CellCollection$$anon$1.prototype.$classData = $d_Lmyreversi_models_reversi_CellCollection$$anon$1;
 /** @constructor */
 var $c_sc_AbstractSeq = (function() {
   $c_sc_AbstractIterable.call(this)
