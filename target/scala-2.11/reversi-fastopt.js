@@ -4453,7 +4453,7 @@ $c_Lmyreversi_ReversiApp$.prototype.main__V = (function() {
   this.refresh__Lmyreversi_models_reversi_Board__V(jsx$2.initialize__I__Lmyreversi_models_reversi_player_CurrentPlayerState__Lmyreversi_models_reversi_Board(jsx$1, new $c_Lmyreversi_models_reversi_player_CurrentPlayerState().init___Lmyreversi_models_reversi_player_Player__Lmyreversi_models_reversi_player_PlayerPare(playerPare.firstPlayer$1, playerPare)))
 });
 $c_Lmyreversi_ReversiApp$.prototype.refresh__Lmyreversi_models_reversi_Board__V = (function(board) {
-  (0, $g["jQuery"])("#main")["empty"]()["append"](new $c_Lmyreversi_views_BoardView().init___Lmyreversi_models_reversi_Board(board).render__Lorg_scalajs_jquery_JQuery())
+  (0, $g["jQuery"])("#main")["empty"]()["append"](new $c_Lmyreversi_views_BoardView().init___Lmyreversi_models_reversi_Board__I(board, $m_Lmyreversi_views_BoardView$().CPUActionInterval$1).render__Lorg_scalajs_jquery_JQuery())
 });
 $c_Lmyreversi_ReversiApp$.prototype.$$js$exported$meth$main__O = (function() {
   this.main__V()
@@ -5394,6 +5394,39 @@ var $m_Lmyreversi_models_shared_Point$ = (function() {
     $n_Lmyreversi_models_shared_Point$ = new $c_Lmyreversi_models_shared_Point$().init___()
   };
   return $n_Lmyreversi_models_shared_Point$
+});
+/** @constructor */
+var $c_Lmyreversi_views_BoardView$ = (function() {
+  $c_O.call(this);
+  this.CPUActionInterval$1 = 0
+});
+$c_Lmyreversi_views_BoardView$.prototype = new $h_O();
+$c_Lmyreversi_views_BoardView$.prototype.constructor = $c_Lmyreversi_views_BoardView$;
+/** @constructor */
+var $h_Lmyreversi_views_BoardView$ = (function() {
+  /*<skip>*/
+});
+$h_Lmyreversi_views_BoardView$.prototype = $c_Lmyreversi_views_BoardView$.prototype;
+$c_Lmyreversi_views_BoardView$.prototype.init___ = (function() {
+  $n_Lmyreversi_views_BoardView$ = this;
+  this.CPUActionInterval$1 = 1000;
+  return this
+});
+var $d_Lmyreversi_views_BoardView$ = new $TypeData().initClass({
+  Lmyreversi_views_BoardView$: 0
+}, false, "myreversi.views.BoardView$", {
+  Lmyreversi_views_BoardView$: 1,
+  O: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lmyreversi_views_BoardView$.prototype.$classData = $d_Lmyreversi_views_BoardView$;
+var $n_Lmyreversi_views_BoardView$ = (void 0);
+var $m_Lmyreversi_views_BoardView$ = (function() {
+  if ((!$n_Lmyreversi_views_BoardView$)) {
+    $n_Lmyreversi_views_BoardView$ = new $c_Lmyreversi_views_BoardView$().init___()
+  };
+  return $n_Lmyreversi_views_BoardView$
 });
 var $d_jl_Byte = new $TypeData().initClass({
   jl_Byte: 0
@@ -10599,7 +10632,7 @@ $c_Lmyreversi_service_exception_NotFoundReversibleReversiException.prototype.$cl
 var $c_Lmyreversi_views_BoardView = (function() {
   $c_O.call(this);
   this.board$1 = null;
-  this.CPUActionInterval$1 = 0;
+  this.cpuIntervalTime$1 = 0;
   this.elem$1 = null
 });
 $c_Lmyreversi_views_BoardView.prototype = new $h_O();
@@ -10613,7 +10646,7 @@ $c_Lmyreversi_views_BoardView.prototype.productPrefix__T = (function() {
   return "BoardView"
 });
 $c_Lmyreversi_views_BoardView.prototype.productArity__I = (function() {
-  return 1
+  return 2
 });
 $c_Lmyreversi_views_BoardView.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
@@ -10622,7 +10655,11 @@ $c_Lmyreversi_views_BoardView.prototype.equals__O__Z = (function(x$1) {
     var BoardView$1 = $as_Lmyreversi_views_BoardView(x$1);
     var x = this.board$1;
     var x$2 = BoardView$1.board$1;
-    return ((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))
+    if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
+      return (this.cpuIntervalTime$1 === BoardView$1.cpuIntervalTime$1)
+    } else {
+      return false
+    }
   } else {
     return false
   }
@@ -10633,6 +10670,10 @@ $c_Lmyreversi_views_BoardView.prototype.productElement__I__O = (function(x$1) {
       return this.board$1;
       break
     }
+    case 1: {
+      return this.cpuIntervalTime$1;
+      break
+    }
     default: {
       throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
     }
@@ -10640,6 +10681,12 @@ $c_Lmyreversi_views_BoardView.prototype.productElement__I__O = (function(x$1) {
 });
 $c_Lmyreversi_views_BoardView.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lmyreversi_views_BoardView.prototype.init___Lmyreversi_models_reversi_Board__I = (function(board, cpuIntervalTime) {
+  this.board$1 = board;
+  this.cpuIntervalTime$1 = cpuIntervalTime;
+  this.elem$1 = (0, $g["jQuery"])(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["<table class=\"board\" />"])).s__sc_Seq__T($m_sci_Nil$()));
+  return this
 });
 $c_Lmyreversi_views_BoardView.prototype.render__Lorg_scalajs_jquery_JQuery = (function() {
   var end = this.board$1.edge$1;
@@ -10693,7 +10740,7 @@ $c_Lmyreversi_views_BoardView.prototype.render__Lorg_scalajs_jquery_JQuery = (fu
     return this.elem$1
   } else if ($is_Lmyreversi_models_reversi_player_CPU(x1)) {
     var x3$1 = $as_Lmyreversi_models_reversi_player_CPU(x1);
-    $m_sjs_js_timers_package$().setTimeout__D__F0__sjs_js_timers_SetTimeoutHandle(this.CPUActionInterval$1, new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(arg$outer, playerState$1, x3$1$1) {
+    $m_sjs_js_timers_package$().setTimeout__D__F0__sjs_js_timers_SetTimeoutHandle(this.cpuIntervalTime$1, new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(arg$outer, playerState$1, x3$1$1) {
       return (function() {
         var this$10 = x3$1$1.strategy$1;
         var cellCollection = arg$outer.board$1.cellCollection$1;
@@ -10711,17 +10758,13 @@ $c_Lmyreversi_views_BoardView.prototype.render__Lorg_scalajs_jquery_JQuery = (fu
   }
 });
 $c_Lmyreversi_views_BoardView.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__I(this, (-889275714))
+  var acc = (-889275714);
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.board$1));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, this.cpuIntervalTime$1);
+  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 2)
 });
 $c_Lmyreversi_views_BoardView.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
-});
-$c_Lmyreversi_views_BoardView.prototype.init___Lmyreversi_models_reversi_Board = (function(board) {
-  this.board$1 = board;
-  this.CPUActionInterval$1 = 1000;
-  this.elem$1 = (0, $g["jQuery"])(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["<table class=\"board\" />"])).s__sc_Seq__T($m_sci_Nil$()));
-  return this
 });
 var $is_Lmyreversi_views_BoardView = (function(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmyreversi_views_BoardView)))
