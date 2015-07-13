@@ -1,14 +1,13 @@
 package myreversi.views
 
 import myreversi.ReversiApp
-import myreversi.models.reversi.player.{User, PlayerPare, CurrentPlayerState}
 import myreversi.models.reversi.Board
+import myreversi.models.reversi.player.{CurrentPlayerState, PlayerPare, User}
 import myreversi.models.shared.Color
 import org.scalajs.jquery._
 import utest._
 
-object ReversiStoryTest extends TestSuite {
-
+object BoardViewTest extends TestSuite {
   jQuery("body").append(s"""<div id="main"></div>""")
 
   ReversiApp.refresh(Board.initialize(
@@ -57,22 +56,5 @@ object ReversiStoryTest extends TestSuite {
       assert(elem.find(".white").length < whiteCount)
     }
 
-    '黒を置いた次にCandidateのCellをクリックすると白のReversiが置かれる {
-      val cellElem = elem.find(".candidate:eq(0)")
-      val reversiCount = elem.find(".reversi").length
-      val blackCount = elem.find(".black").length
-      val whiteCount = elem.find(".white").length
-      cellElem.click()
-      assert(elem.find(".reversi").length == reversiCount + 1)
-      assert(elem.find(".black").length < blackCount)
-      assert(elem.find(".white").length >= whiteCount + 2)
-    }
-
-    'Reversiが置かれているCellをクリックしてもなにも変わらない {
-      val cellElem = elem.find(".reversi:eq(0)")
-      val count = elem.find(".reversi").length
-      cellElem.click()
-      assert(elem.find(".reversi").length == count)
-    }
   }
 }

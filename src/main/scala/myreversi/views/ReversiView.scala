@@ -1,7 +1,7 @@
 package myreversi.views
 
-import org.scalajs.jquery._
 import myreversi.models.reversi.Reversi
+import org.scalajs.jquery._
 
 case class ReversiView(reversi: Reversi) extends View {
   override protected[this] val elem: JQuery =

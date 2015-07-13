@@ -1,16 +1,14 @@
 package myreversi.views
 
-import myreversi.service.strategy.CPUStrategy
-import myreversi.models.reversi.player.{CPU, User, CurrentPlayerState, Player}
-import myreversi.models.reversi.{Reversi, Cell, Board}
-import myreversi.models.shared.Color
-import org.scalajs.jquery._
-
 import myreversi.ReversiApp
 import myreversi.exception.UnknownException
+import myreversi.models.reversi.player.{CPU, CurrentPlayerState, User}
+import myreversi.models.reversi.{Board, Cell, Reversi}
+import myreversi.models.shared.Color
 import myreversi.service.exception.NotFoundReversibleReversiException
+import org.scalajs.jquery._
 
-import scala.util.{Success, Failure}
+import scala.util.{Failure, Success}
 
 case class CellView(cell: Cell,
                     board: Board) extends View {
