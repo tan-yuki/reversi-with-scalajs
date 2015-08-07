@@ -1,7 +1,6 @@
 package myreversi.views
 
 import myreversi.ReversiApp
-import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import myreversi.models.reversi.Board
 import myreversi.models.reversi.player.{CPU, User}
 import org.scalajs.jquery._

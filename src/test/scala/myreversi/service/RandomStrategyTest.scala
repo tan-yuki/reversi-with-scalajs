@@ -1,7 +1,7 @@
 package myreversi.service
 
 import myreversi.ReversiApp
-import myreversi.models.reversi.player.{CPU, CurrentPlayerState, PlayerPare, User}
+import myreversi.models.reversi.player.{CPU, CurrentPlayerState, PlayerPair, User}
 import myreversi.models.reversi.{Board, Cell, CellCollection, Reversi}
 import myreversi.models.shared.{Color, Point}
 import myreversi.service.strategy.RandomStrategy
@@ -13,7 +13,7 @@ object RandomStrategyTest extends TestSuite {
     Board.initialize(ReversiApp.Edge,
       CurrentPlayerState(
         User.Black,
-        PlayerPare(cpu, User.White)
+        PlayerPair(cpu, User.White)
       ))
   }
 

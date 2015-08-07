@@ -1,6 +1,6 @@
 package myreversi.models.reversi.player
 
-case class CurrentPlayerState(player: Player, playerPare: PlayerPare) {
+case class CurrentPlayerState(player: Player, playerPare: PlayerPair) {
 
   lazy val nextState: CurrentPlayerState = copy(
     player = playerPare.oppositePlayer(player)
@@ -10,6 +10,6 @@ case class CurrentPlayerState(player: Player, playerPare: PlayerPare) {
 }
 
 object CurrentPlayerState {
-  def initialState(playerPare: PlayerPare): CurrentPlayerState =
-    CurrentPlayerState(playerPare.firstPlayer, playerPare)
+  def initialState(playerPair: PlayerPair): CurrentPlayerState =
+    CurrentPlayerState(playerPair.firstPlayer, playerPair)
 }

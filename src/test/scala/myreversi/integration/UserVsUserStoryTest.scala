@@ -2,7 +2,7 @@ package myreversi.integration
 
 import myreversi.ReversiApp
 import myreversi.models.reversi.Board
-import myreversi.models.reversi.player.{CurrentPlayerState, PlayerPare, User}
+import myreversi.models.reversi.player.{CurrentPlayerState, PlayerPair, User}
 import org.scalajs.jquery._
 import utest._
 
@@ -12,7 +12,7 @@ object UserVsUserStoryTest extends TestSuite {
 
   ReversiApp.refresh(Board.initialize(
     ReversiApp.Edge,
-    CurrentPlayerState.initialState(PlayerPare(User.Black, User.White))))
+    CurrentPlayerState.initialState(PlayerPair(User.Black, User.White))))
 
   val elem = jQuery("#main")
   val edge = ReversiApp.Edge

@@ -1,7 +1,7 @@
 package myreversi.models
 
 import myreversi.ReversiApp
-import myreversi.models.reversi.player.{User, PlayerPare, CurrentPlayerState, Player}
+import myreversi.models.reversi.player.{User, PlayerPair, CurrentPlayerState, Player}
 import myreversi.models.reversi.{Reversi, CellCollection, Cell, Board}
 import myreversi.models.shared.{Color, Point}
 import utest._
@@ -9,7 +9,7 @@ import utest._
 object CellCollectionTest extends TestSuite {
 
   def createInitialBoard(edge:Int = ReversiApp.Edge) = {
-    Board.initialize(edge, CurrentPlayerState(User.Black, PlayerPare(User.Black, User.White)))
+    Board.initialize(edge, CurrentPlayerState(User.Black, PlayerPair(User.Black, User.White)))
   }
 
 
